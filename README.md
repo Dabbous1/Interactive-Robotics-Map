@@ -1,0 +1,55 @@
+# Retail Robotics Market Map
+
+An interactive world map of the **on-demand retail autonomous robotics market**: which companies operate in each city and country, how much has been invested, and exactly which technologies they develop and use.
+
+It covers six technology families: sidewalk delivery robots, road-going autonomous delivery vehicles, delivery drones, middle-mile autonomous trucks, in-store retail robots and micro-fulfilment automation.
+
+## Run it
+
+Everything is static and self-contained. Open `index.html` directly in a browser, or serve the folder:
+
+```sh
+npx serve .          # or: python3 -m http.server 8000
+```
+
+No build step and no network access are required (the only external request is Google Fonts, which falls back to system fonts).
+
+## What you can do
+
+- **Explore the map**: pan, scroll-zoom, use the zoom buttons or jump to a region. Countries are shaded by a selectable metric (disclosed funding, players present, deployments, cities). City bubbles are sized by deployment count and coloured by the dominant technology; dashed rings are pilots, faded bubbles are ended programmes.
+- **Filter** by technology, deployment status and player role. Double-click a chip to isolate it. Legend swatches toggle technologies too.
+- **Replay the timeline** from 2016 to 2026 with the slider or the Play button. Deployments appear the year they launched and disappear after they end.
+- **Open profiles**: click a country for its investment tier, regulatory context, players by role, technology developed locally versus imported, and cities. Click a city for its deployments and history. Click a player for funding, in-house versus third-party technology, partners and footprint. Selecting a player highlights its footprint on the map.
+- **Search** players, cities, countries and technologies (press `/`).
+- **Table view** lists every deployment matching the filters, sortable by column.
+- Deep links: `#c-USA` (country), `#t-tokyo` (city), `#p-serve` (player).
+- Light and dark themes follow the system setting, with a manual toggle.
+
+## Project layout
+
+| Path | Purpose |
+|---|---|
+| `index.html` | Page shell |
+| `css/styles.css` | Design tokens (light and dark), layout and components |
+| `js/data.js` | The dataset: technology taxonomy, players, countries, cities and deployments |
+| `js/app.js` | Map rendering (D3 + TopoJSON), filters, timeline, drawer, search and table |
+| `data/world-50m.js` | Natural Earth 1:50m country geometry from `world-atlas`, wrapped as a script |
+| `vendor/` | Pinned D3 7.9.0 and topojson-client 3.1.0 builds (see `vendor/LICENSES.md`) |
+
+## Editing the data
+
+All content lives in `js/data.js`:
+
+- `players` — one entry per company with `role` (developer, operator, retailer), `categories`, `fundingUSDm` (set `corporate: true` for internally funded programmes so they are not summed), `develops` (in-house technology) and `uses` (third-party technology).
+- `countries` — ISO numeric code (`iso`) used to match the map geometry, plus regulation and summary text.
+- `cities` — coordinates and a list of `deployments` referencing a player, a technology, a start year (`since`), optional end year (`until`), status, partner and note.
+
+A quick consistency check:
+
+```sh
+node -e 'global.window={};require("./js/data.js");const M=window.MARKET;const P=M.players;const ids=new Set(M.countries.map(c=>c.id));M.cities.forEach(c=>c.deployments.forEach(d=>{if(!P[d.player]||!M.tech[d.tech]||!ids.has(c.country))throw new Error(c.id)}));console.log("ok")'
+```
+
+## Data caveats
+
+Figures are approximate and compiled from public announcements, filings and trade press up to September 2026. Funding totals are rounded and exclude undisclosed rounds; corporate programmes (Amazon, Alphabet, Meituan, JD, Walmart and others) are flagged rather than estimated. Deployment years mark the first public operation in a city.

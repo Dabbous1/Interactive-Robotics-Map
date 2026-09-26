@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Retail Robotics Market Map</title>
+<meta name="description" content="Interactive world map of the on-demand retail autonomous robotics market: players, investment levels and technologies by city and country.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="app" id="app">
+
+  <!-- ============ Top bar ============ -->
+  <header class="topbar">
+    <button class="icon-btn rail-toggle" id="railToggle" aria-label="Toggle filters" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M7 12h10M10 18h4"/></svg>
+    </button>
+    <div class="brand">
+      <span class="eyebrow">On-demand retail · autonomous robotics</span>
+      <h1>Retail Robotics Market Map</h1>
+    </div>
+    <div class="spacer"></div>
+    <div class="search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="search" type="search" placeholder="Search players, cities, countries, technologies…" autocomplete="off" aria-label="Search" aria-controls="searchResults" aria-expanded="false">
+      <kbd>/</kbd>
+      <div class="search-results" id="searchResults" role="listbox" hidden></div>
+    </div>
+    <div class="seg" role="group" aria-label="View">
+      <button id="viewMap" aria-pressed="true">Map</button>
+      <button id="viewTable" aria-pressed="false">Table</button>
+    </div>
+    <button class="text-btn" id="aboutBtn">About the data</button>
+    <button class="icon-btn" id="themeBtn" aria-label="Toggle dark mode" title="Toggle theme">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9z"/></svg>
+    </button>
+  </header>
+
+  <!-- ============ Main ============ -->
+  <div class="main">
+    <aside class="rail" id="rail" aria-label="Filters and summary">
+      <div class="field">
+        <h2>Colour countries by</h2>
+        <select id="metric" aria-label="Country metric">
+          <option value="funding">Disclosed funding of local companies (USD)</option>
+          <option value="players">Number of players present</option>
+          <option value="deployments">Deployments matching filters</option>
+          <option value="cities">Cities with activity</option>
+        </select>
+      </div>
+
+      <div>
+        <h2>Technology</h2>
+        <div class="chips" id="techChips"></div>
+        <div class="chip-row-actions"><button id="techAll">All</button><button id="techNone">None</button></div>
+      </div>
+
+      <div>
+        <h2>Deployment status</h2>
+        <div class="chips" id="statusChips"></div>
+      </div>
+
+      <div>
+        <h2>Player role</h2>
+        <div class="chips" id="roleChips"></div>
+      </div>
+
+      <div>
+        <h2>In view</h2>
+        <div class="stats" id="stats"></div>
+      </div>
+
+      <div>
+        <h2>Players <span id="playerCount" class="num"></span></h2>
+        <div class="players-list" id="playersList"></div>
+      </div>
+    </aside>
+
+    <div class="map-wrap" id="mapWrap">
+      <svg id="map" role="img" aria-label="World map of retail autonomous robotics deployments"></svg>
+
+      <div class="region-jump" id="regionJump" role="group" aria-label="Jump to region"></div>
+
+      <div class="map-controls">
+        <button class="icon-btn" id="zoomIn" aria-label="Zoom in"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button>
+        <button class="icon-btn" id="zoomOut" aria-label="Zoom out"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/></svg></button>
+        <button class="icon-btn" id="zoomReset" aria-label="Reset view"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></button>
+      </div>
+
+      <div class="legend" id="legend" aria-label="Legend"></div>
+
+      <div class="table-wrap" id="tableWrap" hidden></div>
+
+      <!-- ============ Detail drawer ============ -->
+      <aside class="drawer" id="drawer" aria-label="Details" aria-hidden="true">
+        <div class="drawer-head" id="drawerHead"></div>
+        <div class="drawer-body" id="drawerBody"></div>
+      </aside>
+    </div>
+  </div>
+
+  <!-- ============ Timeline ============ -->
+  <footer class="timeline">
+    <div class="year"><small>Showing</small><span id="yearLabel">2026</span></div>
+    <div class="slider-wrap">
+      <div class="spark" id="spark" aria-hidden="true"></div>
+      <input type="range" id="year" min="2016" max="2026" step="1" value="2026" aria-label="Year">
+      <div class="ticks" id="ticks"></div>
+    </div>
+    <div class="tl-actions">
+      <button class="text-btn" id="play" aria-pressed="false">▶ Play timeline</button>
+    </div>
+  </footer>
+</div>
+
+<div class="tooltip" id="tooltip" role="tooltip"></div>
+
+<div class="modal-back" id="modal" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="icon-btn close" id="modalClose" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <h2 class="big" id="modalTitle">About this map</h2>
+    <p>This map tracks the development of the <strong>on-demand retail autonomous robotics market</strong>: robots that fulfil food, grocery, convenience and parcel orders without a human courier. It covers six technology families: sidewalk delivery robots, road-going autonomous delivery vehicles, delivery drones, middle-mile autonomous trucks, in-store retail robots and micro-fulfilment automation.</p>
+    <h2>How to read it</h2>
+    <ul>
+      <li><strong>Country shading</strong> shows the selected metric. The default is publicly disclosed equity funding raised by companies headquartered in that country. Corporate programmes funded internally (Amazon, Alphabet, Meituan, JD, Walmart…) are flagged as “corporate” and are not summed.</li>
+      <li><strong>City bubbles</strong> are sized by the number of deployments matching your filters and coloured by the dominant technology. Dashed rings mark pilots, faded bubbles mark ended programmes.</li>
+      <li><strong>Timeline</strong> replays the market year by year: a deployment appears in the year it launched and disappears the year after it ended.</li>
+      <li>Click any country, city or player to open its profile. Player profiles list technology <em>developed</em> in-house separately from technology <em>used</em> from third parties.</li>
+    </ul>
+    <h2>Sources and caveats</h2>
+    <p>Figures are approximate and compiled from company announcements, regulatory filings, investor press releases and trade press up to <span id="updated"></span>. Funding totals are rounded and may omit undisclosed rounds. Deployment years mark first public operation in the city. Use the Table view for the full data set.</p>
+  </div>
+</div>
+
+<script src="vendor/d3.v7.9.0.min.js"></script>
+<script src="vendor/topojson-client.v3.1.0.min.js"></script>
+<script src="data/world-50m.js"></script>
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
