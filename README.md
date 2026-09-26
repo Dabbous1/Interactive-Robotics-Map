@@ -20,6 +20,8 @@ No build step and no network access are required (the only external request is G
 - **Filter** by technology, deployment status and player role. Double-click a chip to isolate it. Legend swatches toggle technologies too.
 - **Replay the timeline** from 2016 to 2026 with the slider or the Play button. Deployments appear the year they launched and disappear after they end.
 - **Open profiles**: click a country for its investment tier, regulatory context, players by role, technology developed locally versus imported, and cities. Click a city for its deployments and history. Click a player for funding, in-house versus third-party technology, partners and footprint. Selecting a player highlights its footprint on the map.
+- **Showcase media**: every player profile, city drawer and country drawer carries a photo or a video of the robots in operation. Videos play inline (they open on YouTube when the page runs inside a sandboxed frame), photos come from Wikimedia Commons with a credit link to the file page, and a line drawing of the machine type stands in when an image cannot load. Operators without their own footage show the partner technology they deploy, labelled as such.
+- **Gallery view** lists every player matching the filters as a media card with links to the website, video, newsroom and photo source.
 - **Search** players, cities, countries and technologies (press `/`).
 - **Table view** lists every deployment matching the filters, sortable by column.
 - Deep links: `#c-USA` (country), `#t-tokyo` (city), `#p-serve` (player).
@@ -32,6 +34,8 @@ No build step and no network access are required (the only external request is G
 | `index.html` | Page shell |
 | `css/styles.css` | Design tokens (light and dark), layout and components |
 | `js/data.js` | The dataset: technology taxonomy, players, countries, cities and deployments |
+| `js/media.js` | Showcase media per player: website, YouTube video, Wikimedia Commons photo, newsroom, city-specific videos |
+| `js/illustrations.js` | Fallback line illustrations, one per technology family |
 | `js/app.js` | Map rendering (D3 + TopoJSON), filters, timeline, drawer, search and table |
 | `data/world-50m.js` | Natural Earth 1:50m country geometry from `world-atlas`, wrapped as a script |
 | `vendor/` | Pinned D3 7.9.0 and topojson-client 3.1.0 builds (see `vendor/LICENSES.md`) |
@@ -50,6 +54,10 @@ A quick consistency check:
 node -e 'global.window={};require("./js/data.js");const M=window.MARKET;const P=M.players;const ids=new Set(M.countries.map(c=>c.id));M.cities.forEach(c=>c.deployments.forEach(d=>{if(!P[d.player]||!M.tech[d.tech]||!ids.has(c.country))throw new Error(c.id)}));console.log("ok")'
 ```
 
+### Media
+
+`js/media.js` holds one entry per player: `site`, `video` (YouTube watch URL and title), `channel`, `image` (a Wikimedia Commons `File:` title plus its page URL), `press`, optional `deploymentVideos` (city-specific clips) and, for operators without their own footage, `proxy` naming the technology partner whose media to show. Images are loaded through Commons' `Special:FilePath` redirect, so only the file title is needed. Every URL was taken from a public search result; nothing is guessed.
+
 ## Data caveats
 
-Figures are approximate and compiled from public announcements, filings and trade press up to September 2026. Funding totals are rounded and exclude undisclosed rounds; corporate programmes (Amazon, Alphabet, Meituan, JD, Walmart and others) are flagged rather than estimated. Deployment years mark the first public operation in a city.
+Figures are approximate and compiled from public announcements, filings and trade press up to September 2026. Funding totals are rounded and exclude undisclosed rounds; corporate programmes (Amazon, Alphabet, Meituan, JD, Walmart and others) are flagged rather than estimated. Deployment years mark the first public operation in a city. Showcase videos are official or press uploads hosted on YouTube and remain the property of their uploaders; Commons photos carry their own free licences, stated on the linked file pages. A few images show the partner's machine rather than the operator's own (flagged with a note in the media file).

@@ -45,6 +45,74 @@
   const techVar = (t) => `var(--c-${t})`;
   const playerName = (id) => (M.players[id] || {}).name || id;
 
+  /* ---------------- showcase media helpers ---------------- */
+  const MEDIA = window.MEDIA || {};
+  const ILL = window.ILLUSTRATIONS || {};
+  /* Inline video embeds only when the page is the top document; inside a sandboxed frame we link out instead. */
+  const embedAllowed = (() => { try { return window.self === window.top; } catch (e) { return false; } })();
+  const PLAY_SVG = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l13-7.5z"/></svg>';
+  const EXT_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M19 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"/></svg>';
+  function ytId(url) { const m = /(?:youtube\.com\/(?:watch\?(?:.*&)?v=|shorts\/|embed\/|live\/)|youtu\.be\/)([A-Za-z0-9_-]{11})/.exec(url || ""); return m ? m[1] : null; }
+  function commonsUrl(file, w = 640) { const t = file.replace(/^File:/, "").replace(/ /g, "_"); return `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(t)}?width=${w}`; }
+  const mediaFor = (id) => MEDIA[id] || {};
+  function cityVideo(id, city) {
+    const dv = (mediaFor(id).deploymentVideos || []).find(v => v.city && city && (city.name.toLowerCase().includes(v.city.toLowerCase()) || v.city.toLowerCase().includes(city.name.split(/[ (–&\/]/)[0].toLowerCase())));
+    return dv && ytId(dv.url) ? dv : null;
+  }
+  function pickMedia(id, city) {
+    const own = mediaFor(id);
+    const hasOwn = (own.video && ytId(own.video.url)) || (own.image && own.image.file);
+    const via = !hasOwn && own.proxy && MEDIA[own.proxy] ? own.proxy : null;
+    const m = via ? MEDIA[via] : own;
+    const video = (city && cityVideo(id, city)) || (m.video && ytId(m.video.url) ? m.video : null);
+    let img = null;
+    if (m.image && m.image.file) img = { src: commonsUrl(m.image.file), credit: m.image.page, label: "Photo · Wikimedia Commons" };
+    else if (video) img = { src: `https://i.ytimg.com/vi/${ytId(video.url)}/hqdefault.jpg`, credit: video.url, label: "Video still · YouTube" };
+    return { video, img, via, tech: (M.players[id].categories || [])[0] || "sidewalk" };
+  }
+  function illus(tech) { return ILL[tech] || ILL.sidewalk || ""; }
+  function playControl(video) {
+    const label = `Play video: ${video.title || "showcase"}`;
+    return embedAllowed
+      ? `<button class="play" data-play="${esc(video.url)}" aria-label="${esc(label)}"><span>${PLAY_SVG}</span></button>`
+      : `<a class="play" href="${esc(video.url)}" target="_blank" rel="noopener" aria-label="${esc(label)} (opens YouTube)"><span>${PLAY_SVG}</span></a>`;
+  }
+  /* A 16:9 card: photo (or video still) over a line illustration that shows through when the image cannot load. */
+  function mediaCard(id, opts = {}) {
+    const { video, img, via, tech } = pickMedia(id, opts.city);
+    const p = M.players[id];
+    const badge = via ? `Partner tech · ${playerName(via)}` : video ? "Video" : img ? "Photo" : "Illustration";
+    const title = via ? `${p.name} deploys ${playerName(via)} robots` : video ? (video.title || p.name) : (opts.city ? `${p.name} · ${opts.city.name}` : p.name);
+    return `<div class="media-card" style="--sw:${techVar(tech)}" ${opts.goPlayer ? `data-go-player="${id}"` : ""}>
+      <div class="frame">${illus(tech)}${img ? `<img src="${esc(img.src)}" alt="${esc(p.name)} ${esc(M.tech[tech].short.toLowerCase())}" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">` : ""}${video ? playControl(video) : ""}<span class="badge">${badge}</span></div>
+      <div class="cap"><span class="ttl" title="${esc(title)}">${esc(title)}</span>${img ? `<a href="${esc(img.credit)}" target="_blank" rel="noopener" title="${esc(img.label)}">${img.label.split(" · ")[1]}</a>` : `<span>${esc(M.tech[tech].short)}</span>`}</div>
+    </div>`;
+  }
+  function thumb(id, tech, city) {
+    const { video, img } = pickMedia(id, city);
+    return `<span class="thumb" style="--sw:${techVar(tech)}">${illus(tech)}${img ? `<img src="${esc(img.src.replace("width=640", "width=160").replace("hqdefault", "mqdefault"))}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">` : ""}${video ? `<span class="mini-play">${PLAY_SVG}</span>` : ""}</span>`;
+  }
+  function mediaLinks(id) {
+    const m = mediaFor(id); const out = [];
+    if (m.site) out.push(`<a href="${esc(m.site)}" target="_blank" rel="noopener">${EXT_SVG}Website</a>`);
+    if (m.video && m.video.url) out.push(`<a href="${esc(m.video.url)}" target="_blank" rel="noopener">${PLAY_SVG}Watch on YouTube</a>`);
+    else if (m.proxy && MEDIA[m.proxy] && MEDIA[m.proxy].video) out.push(`<a href="${esc(MEDIA[m.proxy].video.url)}" target="_blank" rel="noopener">${PLAY_SVG}Watch ${esc(playerName(m.proxy))} robots</a>`);
+    if (m.channel) out.push(`<a href="${esc(m.channel)}" target="_blank" rel="noopener">${EXT_SVG}YouTube channel</a>`);
+    if (m.press) out.push(`<a href="${esc(m.press)}" target="_blank" rel="noopener">${EXT_SVG}Newsroom &amp; photos</a>`);
+    if (m.image && m.image.page) out.push(`<a href="${esc(m.image.page)}" target="_blank" rel="noopener">${EXT_SVG}Photo source</a>`);
+    (m.deploymentVideos || []).filter(v => ytId(v.url)).slice(0, 3).forEach(v => out.push(`<a href="${esc(v.url)}" target="_blank" rel="noopener">${PLAY_SVG}${esc(v.city)}</a>`));
+    return out.length ? `<div class="media-links">${out.join("")}</div>` : "";
+  }
+  /* Delegated: play buttons swap the frame for an embedded player. */
+  document.addEventListener("click", (ev) => {
+    const btn = ev.target.closest("button[data-play]");
+    if (!btn) return;
+    ev.preventDefault(); ev.stopPropagation();
+    const id = ytId(btn.dataset.play); if (!id) return;
+    const frame = btn.closest(".frame");
+    frame.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0" title="Showcase video" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>`;
+  }, true);
+
   /* ---------------- derived data ---------------- */
   function deploymentVisible(d) {
     const p = M.players[d.player];
@@ -136,7 +204,6 @@
   const zoom = d3.zoom().scaleExtent([1, 40]).on("zoom", (ev) => {
     k = ev.transform.k;
     gRoot.attr("transform", ev.transform);
-    gCountries.selectAll("path").attr("stroke-width", 0.5 / k);
     updateBubbleGeometry();
   });
   svg.call(zoom).on("dblclick.zoom", null);
@@ -175,11 +242,11 @@
       const n = rows.length;
       const r = n ? (4 + 3.2 * Math.sqrt(n)) / Math.sqrt(k) : 0;
       const g = d3.select(this);
-      g.select("circle.bubble").attr("r", r).attr("stroke-width", 2 / k);
+      g.select("circle.bubble").attr("r", r);
       g.select("circle.hit").attr("r", Math.max(r, 10 / k));
       const isSel = state.selection && state.selection.type === "city" && state.selection.id === d.id;
       const showLabel = n && (k >= 4.5 || (k >= 2.2 && n >= 3) || n >= 8 || isSel);
-      g.select("text").attr("dy", `${-(r + 4 / k)}px`).attr("font-size", `${11 / k}px`).attr("stroke-width", 3 / k).text(showLabel ? d.name : "");
+      g.select("text").attr("dy", `${-(r + 4 / k)}px`).style("font-size", `${11 / k}px`).text(showLabel ? d.name : "");
     });
   }
 
@@ -234,6 +301,7 @@
     renderPlayersList();
     renderSpark();
     if (state.view === "table") renderTable();
+    if (state.view === "gallery") renderGallery();
     if (state.selection) renderDrawer(); /* keep drawer in sync with filters */
   }
 
@@ -392,7 +460,7 @@
     else if (sel.type === "city") renderCity(cityById[sel.id]);
     else renderPlayer(sel.id, M.players[sel.id]);
     $("drawerClose").addEventListener("click", () => select(null));
-    $("drawerBody").querySelectorAll("[data-go-player]").forEach(b => b.addEventListener("click", () => select({ type: "player", id: b.dataset.goPlayer })));
+    $("drawerBody").querySelectorAll("[data-go-player]").forEach(b => b.addEventListener("click", (ev) => { if (ev.target.closest("a, [data-play]")) return; select({ type: "player", id: b.dataset.goPlayer }); }));
     $("drawerBody").querySelectorAll("[data-go-city]").forEach(b => b.addEventListener("click", () => select({ type: "city", id: b.dataset.goCity })));
     $("drawerBody").querySelectorAll("[data-go-country]").forEach(b => b.addEventListener("click", () => select({ type: "country", id: b.dataset.goCountry })));
     $("drawerBody").querySelectorAll("[data-tech-desc]").forEach(b => b.addEventListener("click", () => { state.tech = new Set([b.dataset.techDesc]); syncChips(); render(); }));
@@ -424,8 +492,11 @@
     const firstYear = d3.min(M.cities.filter(ct => ct.country === c.id).flatMap(ct => ct.deployments.map(d => d.since)));
 
     $("drawerHead").innerHTML = head(c.region, c.name, `${a.deployments} deployments · ${a.cities} cities · ${a.players.size} players${firstYear ? ` · active since ${firstYear}` : ""}`);
+    const showcase = presentPlayers.slice().sort((x, y) => cities.filter(ct => ct.rows.some(r => r.player === y)).length - cities.filter(ct => ct.rows.some(r => r.player === x)).length).slice(0, 6);
     $("drawerBody").innerHTML = `
-      <section><p>${esc(c.summary)}</p></section>
+      <section><p>${esc(c.summary)}</p>
+        ${showcase.length ? `<div class="strip">${showcase.map(id => mediaCard(id, { goPlayer: true })).join("")}</div>` : ""}
+      </section>
       <section>
         <h3>Level of investment</h3>
         <div class="kv">
@@ -468,14 +539,16 @@
     const c = countryById[city.country];
     const counts = d3.rollup(rows, v => v.length, r => r.tech);
     $("drawerHead").innerHTML = head(c.name, city.name, `${rows.length} deployment${rows.length === 1 ? "" : "s"} in view · <button class="inline-btn" data-go-country="${c.id}">Country profile</button>`);
+    const showcase = [...new Set(rows.map(r => r.player))].slice(0, 6);
     $("drawerBody").innerHTML = `
+      ${showcase.length ? `<section><h3>Showcase</h3><div class="strip">${showcase.map(id => mediaCard(id, { city, goPlayer: true })).join("")}</div></section>` : ""}
       <section>
         <h3>Technology mix</h3>
         ${counts.size ? techMix(Object.fromEntries(counts)) : "<p>No deployments in this city match the current filters. Adjust the year or technology filters.</p>"}
       </section>
       <section>
         <h3>Players & deployments</h3>
-        <div class="list">${rows.map(r => { const p = M.players[r.player]; return `<button class="item" data-go-player="${r.player}" style="--sw:${techVar(r.tech)}"><span class="dot"></span><span><div class="n">${esc(p.name)} <span style="color:var(--ink-3);font-weight:500;font-size:12px">· ${esc(M.roles[p.role])}</span></div><div class="d">${esc(M.tech[r.tech].short)}${r.partner ? ` · with ${esc(r.partner)}` : ""}${r.note ? `<br>${esc(r.note)}` : ""}</div><div class="status-line" style="margin-top:6px">${statusPill(r.effective)}</div></span><span class="r">${r.since}${r.until ? `–${r.until}` : ""}</span></button>`; }).join("")}</div>
+        <div class="list">${rows.map(r => { const p = M.players[r.player]; return `<button class="item with-thumb" data-go-player="${r.player}" style="--sw:${techVar(r.tech)}">${thumb(r.player, r.tech, city)}<span class="dot"></span><span><div class="n">${esc(p.name)} <span style="color:var(--ink-3);font-weight:500;font-size:12px">· ${esc(M.roles[p.role])}</span></div><div class="d">${esc(M.tech[r.tech].short)}${r.partner ? ` · with ${esc(r.partner)}` : ""}${r.note ? `<br>${esc(r.note)}` : ""}</div><div class="status-line" style="margin-top:6px">${statusPill(r.effective)}</div></span><span class="r">${r.since}${r.until ? `–${r.until}` : ""}</span></button>`; }).join("")}</div>
       </section>
       <section>
         <h3>Timeline</h3>
@@ -491,7 +564,10 @@
     $("drawerHead").innerHTML = head(`${M.roles[p.role]} · founded ${p.founded}`, p.name, `${esc(p.hq)} · <button class="inline-btn" data-go-country="${p.country}">${esc(c.name)}</button>`);
     $("drawerBody").innerHTML = `
       <section>
-        <div class="status-line">${statusPill(p.status)}${p.categories.map(techPill).join("")}</div>
+        ${mediaCard(id)}
+        ${mediaLinks(id)}
+        ${mediaFor(id).note ? `<div class="credit">${esc(mediaFor(id).note)}</div>` : ""}
+        <div class="status-line" style="margin-top:12px">${statusPill(p.status)}${p.categories.map(techPill).join("")}</div>
         <p style="margin-top:10px">${esc(p.scale)}</p>
       </section>
       <section>
@@ -525,7 +601,7 @@
     const val = (r) => ({ country: countryById[r.city.country].name, city: r.city.name, player: playerName(r.player), role: M.roles[M.players[r.player].role], tech: M.tech[r.tech].short, partner: r.partner || "", since: r.since, status: r.effective, funding: M.players[r.player].fundingUSDm || 0 })[key];
     rows.sort((a, b) => { const x = val(a), y = val(b); return (x > y ? 1 : x < y ? -1 : 0) * dir; });
     const cols = [["country", "Country"], ["city", "City"], ["player", "Player"], ["role", "Role"], ["tech", "Technology"], ["partner", "Partner / customer"], ["since", "Since"], ["status", "Status"], ["funding", "Player funding"]];
-    $("tableWrap").innerHTML = `<table class="deploy"><thead><tr>${cols.map(([k2, l]) => `<th data-key="${k2}" ${state.sort.key === k2 ? `aria-sort="${state.sort.dir === "asc" ? "ascending" : "descending"}"` : 'aria-sort="none"'}>${l}</th>`).join("")}<th>Notes</th></tr></thead>
+    $("tableWrap").innerHTML = `<table class="deploy"><thead><tr>${cols.map(([k2, l]) => `<th data-key="${k2}" ${state.sort.key === k2 ? `aria-sort="${state.sort.dir === "asc" ? "ascending" : "descending"}"` : 'aria-sort="none"'}>${l}</th>`).join("")}<th>Media</th><th>Notes</th></tr></thead>
       <tbody>${rows.map(r => { const p = M.players[r.player]; return `<tr>
         <td><button class="link" data-go-country="${r.city.country}">${esc(countryById[r.city.country].name)}</button></td>
         <td><button class="link" data-go-city="${r.city.id}">${esc(r.city.name)}</button></td>
@@ -536,6 +612,7 @@
         <td class="num">${r.since}${r.until ? `–${r.until}` : ""}</td>
         <td>${statusPill(r.effective)}</td>
         <td class="num">${p.corporate ? "corporate" : (p.fundingUSDm ? fmtMoney(p.fundingUSDm) : "—")}</td>
+        <td>${(() => { const m = mediaFor(r.player); const v = cityVideo(r.player, r.city) || m.video; const out = []; if (v && ytId(v.url)) out.push(`<a href="${esc(v.url)}" target="_blank" rel="noopener" title="${esc(v.title || "Video")}" class="link" style="display:inline-flex;align-items:center;gap:3px">${PLAY_SVG.replace("<svg ", "<svg style=\"width:12px;height:12px\" ")}Video</a>`); if (m.image && m.image.page) out.push(`<a href="${esc(m.image.page)}" target="_blank" rel="noopener" class="link">Photo</a>`); if (m.site) out.push(`<a href="${esc(m.site)}" target="_blank" rel="noopener" class="link">Site</a>`); return out.join(" · ") || "—"; })()}</td>
         <td style="min-width:220px;color:var(--ink-2)">${esc(r.note || "")}</td></tr>`; }).join("")}</tbody></table>
       <p style="color:var(--ink-3);font-size:12px;margin:10px 4px">${rows.length} deployments match the current filters (year ≤ ${state.year}).</p>`;
     $("tableWrap").querySelectorAll("th[data-key]").forEach(th => th.addEventListener("click", () => {
@@ -548,16 +625,40 @@
     $("tableWrap").querySelectorAll("[data-go-country]").forEach(b => b.addEventListener("click", () => { setView("map"); select({ type: "country", id: b.dataset.goCountry }); }));
   }
 
+  function renderGallery() {
+    const rows = visibleDeployments();
+    const byPlayer = d3.rollup(rows, v => new Set(v.map(r => r.city.id)), r => r.player);
+    const list = [...byPlayer.entries()].sort((a, b) => b[1].size - a[1].size || playerName(a[0]).localeCompare(playerName(b[0])));
+    const withMedia = list.filter(([id]) => { const m = mediaFor(id); return (m.video && ytId(m.video.url)) || (m.image && m.image.file); }).length;
+    $("galleryWrap").innerHTML = `
+      <div class="gallery-head"><h2>Project showcase</h2><p>${list.length} players match the current filters · ${withMedia} with photo or video · year ≤ ${state.year}</p></div>
+      <div class="gallery">${list.map(([id, cities]) => { const p = M.players[id]; const countries = new Set([...cities].map(c => cityById[c].country)); return `<article class="gcard">
+        ${mediaCard(id)}
+        <div class="body">
+          <div class="n"><button data-go-player="${id}">${esc(p.name)}</button></div>
+          <div class="m">${esc(M.roles[p.role])} · ${esc(p.hq)}</div>
+          <div class="pills">${p.categories.map(techPill).join("")}${statusPill(p.status)}</div>
+          <div class="d">${esc(p.scale)}</div>
+          ${mediaLinks(id)}
+          <div class="foot"><span><span class="num">${cities.size}</span> cit${cities.size === 1 ? "y" : "ies"} · <span class="num">${countries.size}</span> countr${countries.size === 1 ? "y" : "ies"}</span><span class="num">${p.corporate ? "corporate" : (p.fundingUSDm ? fmtMoney(p.fundingUSDm) + " raised" : "")}</span></div>
+        </div></article>`; }).join("") || "<p>No players match the current filters.</p>"}</div>`;
+    $("galleryWrap").querySelectorAll("[data-go-player]").forEach(b => b.addEventListener("click", () => { setView("map"); select({ type: "player", id: b.dataset.goPlayer }); }));
+  }
+
   function setView(v) {
     state.view = v;
-    if (v === "table" && state.selection) select(null);
+    if (v !== "map" && state.selection) select(null);
     $("viewMap").setAttribute("aria-pressed", v === "map");
+    $("viewGallery").setAttribute("aria-pressed", v === "gallery");
     $("viewTable").setAttribute("aria-pressed", v === "table");
     $("tableWrap").hidden = v !== "table";
-    $("legend").style.display = v === "table" ? "none" : "";
-    $("regionJump").style.display = v === "table" ? "none" : "";
-    document.querySelector(".map-controls").style.display = v === "table" ? "none" : "";
+    $("galleryWrap").hidden = v !== "gallery";
+    const mapOnly = v === "map" ? "" : "none";
+    $("legend").style.display = mapOnly;
+    $("regionJump").style.display = mapOnly;
+    document.querySelector(".map-controls").style.display = mapOnly;
     if (v === "table") renderTable();
+    if (v === "gallery") renderGallery();
   }
 
   /* ---------------- filters UI ---------------- */
@@ -600,6 +701,7 @@
 
   /* view toggle */
   $("viewMap").addEventListener("click", () => setView("map"));
+  $("viewGallery").addEventListener("click", () => setView("gallery"));
   $("viewTable").addEventListener("click", () => setView("table"));
 
   /* ---------------- timeline ---------------- */
@@ -630,7 +732,8 @@
   function runSearch() {
     const q = searchInput.value.trim().toLowerCase();
     if (!q) { results.hidden = true; searchInput.setAttribute("aria-expanded", "false"); return; }
-    current = index.filter(x => x.text.includes(q)).slice(0, 14);
+    const rank = (x) => { const l = x.label.toLowerCase(); return l === q ? 0 : l.startsWith(q) ? 1 : l.includes(q) ? 2 : 3; };
+    current = index.filter(x => x.text.includes(q)).sort((a, b) => rank(a) - rank(b)).slice(0, 14);
     activeIdx = current.length ? 0 : -1;
     const groups = d3.group(current, x => x.type);
     const order = ["player", "city", "country", "tech"], names = { player: "Players", city: "Cities", country: "Countries", tech: "Technology" };
