@@ -161,7 +161,7 @@
     }
     for (const [id, p] of Object.entries(M.players)) {
       if (!playerMatchesFilters(p)) continue;
-      if (p.founded > state.year) continue;
+      if (p.founded && p.founded > state.year) continue;
       const a = agg[p.country];
       a.hqPlayers.push(id);
       if (p.corporate) a.corporate += 1; else a.funding += p.fundingUSDm || 0;
@@ -562,7 +562,7 @@
     const deps = cities.flatMap(c => c.deployments.filter(d => d.player === id).map(d => ({ ...d, city: c })));
     const countries = new Set(cities.map(c => c.country));
     const c = countryById[p.country];
-    $("drawerHead").innerHTML = head(`${M.roles[p.role]} · founded ${p.founded}`, p.name, `${esc(p.hq)} · <button class="inline-btn" data-go-country="${p.country}">${esc(c.name)}</button>`);
+    $("drawerHead").innerHTML = head(`${M.roles[p.role]}${p.founded ? ` · founded ${p.founded}` : ""}`, p.name, `${esc(p.hq)} · <button class="inline-btn" data-go-country="${p.country}">${esc(c.name)}</button>`);
     $("drawerBody").innerHTML = `
       <section>
         ${mediaCard(id)}

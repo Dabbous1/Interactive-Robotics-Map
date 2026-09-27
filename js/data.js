@@ -743,6 +743,354 @@ window.MARKET = {
         "Woolworths Group (acquirer)"
       ]
     },
+    autostore: {
+      "name": "AutoStore",
+      "hq": "Nedre Vats, Norway",
+      "country": "NOR",
+      "founded": 1996,
+      "role": "developer",
+      "categories": [
+        "mfc"
+      ],
+      "fundingUSDm": 0,
+      "corporate": true,
+      "fundingNote": "Listed on Euronext Oslo Børs in October 2021 at NOK 31/share, valuing the company at NOK 103.5bn (~$12.4bn); raised NOK 2.7bn in new shares. SoftBank bought a 40% stake for $2.8bn in April 2021 (~$7bn valuation); other owners include Thomas H. Lee Partners and EQT.",
+      "status": "active",
+      "scale": "Cube-storage ASRS with robots running on top of a bin grid; more than 500 installations (later 1,000+) and 18,000+ robots across 30+ countries, sold through integrators (Swisslog, Element Logic, Bastian, Kardex, Dematic, StrongPoint). Grocery MFC customers/users include H Mart (New Jersey, 2021), Asda (UK, via Swisslog), H-E-B (via Swisslog) and Rohlik spin-out Veloq (Vienna, 2025). Sued Ocado for patent infringement in 2020.",
+      "develops": [
+        "Cube storage grid, Red Line / Black Line robots, ports and controller software",
+        "Pio robot-as-a-service offer for SMBs (2022)",
+        "Frozen-food cube storage for grocers",
+        "Real-time expedition (route sorting) module first integrated at Veloq Vienna"
+      ],
+      "uses": [],
+      "partners": [
+        "Swisslog",
+        "Element Logic",
+        "Bastian Solutions",
+        "Kardex",
+        "StrongPoint",
+        "Veloq (Rohlik Group)",
+        "H Mart",
+        "Asda",
+        "H-E-B"
+      ]
+    },
+    exotec: {
+      "name": "Exotec",
+      "hq": "Croix (Lille), France",
+      "country": "FRA",
+      "founded": 2015,
+      "role": "developer",
+      "categories": [
+        "mfc"
+      ],
+      "fundingUSDm": 335,
+      "corporate": false,
+      "fundingNote": "$335M Series D (Jan 2022, Goldman Sachs Growth-led) at a $2bn valuation made Exotec France's first industrial unicorn; earlier rounds not tallied here (undisclosed total).",
+      "status": "active",
+      "scale": "Skypod rack-climbing goods-to-person robots deployed at 200+ customer sites worldwide, including e-grocery and retail sites for Carrefour (Le Plessis-Pâté, 225 robots, 2019), Cdiscount (first customer, Cestas 2016), Decathlon (seven-site Skyfleet programme across Europe), Auchan Luxembourg, Uniqlo/Fast Retailing (Japan, 2019), Gap, Monoprix and Geodis. Launched Next Generation Skypod all-in-one AS/RS in 2024.",
+      "develops": [
+        "Skypod autonomous robots climbing racks up to ~12-14 m",
+        "Skypicker piece-picking arm, Skypath conveyors, Skyflow",
+        "Astar / Deepsky warehouse software"
+      ],
+      "uses": [],
+      "partners": [
+        "Carrefour",
+        "Cdiscount",
+        "Decathlon",
+        "Uniqlo / Fast Retailing",
+        "Gap (via integrator AHS)",
+        "Auchan Retail Luxembourg",
+        "Monoprix",
+        "Geodis",
+        "Yodobashi Camera",
+        "Mitsubishi Shokuhin"
+      ]
+    },
+    brightpick: {
+      "name": "Brightpick",
+      "hq": "Erlanger, Kentucky (Cincinnati area), USA / Bratislava, Slovakia",
+      "country": "USA",
+      "founded": 2021,
+      "role": "developer",
+      "categories": [
+        "mfc"
+      ],
+      "fundingUSDm": 47,
+      "corporate": false,
+      "fundingNote": "Spun out of Photoneo (Bratislava) in 2021; $21M Series B (Dec 2021, AI Capital, IPM Group, Earlybird, Credo Ventures) extended to $40M in Jan 2023 (Taiwania Capital); $12M equity+debt in Nov 2024 for US expansion brought total to about $47M (Photoneo itself invested $35M+).",
+      "status": "active",
+      "scale": "Autopicker autonomous mobile picking robots pick, consolidate and dispatch orders in grocery, pharmacy and e-commerce fulfilment centres; customers include e-grocer Rohlik Group (Prague pilot, then Munich, Frankfurt, Vienna), pharmacy chain Dr. Max (30 Autopickers in Prague, expanding to two countries in 2026) and The Feed (103 Autopickers near Boulder, Colorado).",
+      "develops": [
+        "Brightpick Autopicker mobile picking robot with 3D vision and AI grasping",
+        "Brightpick Dispatcher AMR",
+        "Brightpick Intuition orchestration software"
+      ],
+      "uses": [
+        "Photoneo 3D vision sensors"
+      ],
+      "partners": [
+        "Photoneo",
+        "Rohlik Group (Rohlik.cz / Knuspr / Gurkerl)",
+        "Dr. Max Group / Viapharma",
+        "The Feed"
+      ]
+    },
+    swisslog: {
+      "name": "Swisslog (KUKA Group)",
+      "hq": "Buchs (Aargau), Switzerland",
+      "country": "CHE",
+      "founded": 1900,
+      "role": "developer",
+      "categories": [
+        "mfc"
+      ],
+      "fundingUSDm": 0,
+      "corporate": true,
+      "fundingNote": "Subsidiary of KUKA AG (itself owned by Midea Group); funded internally, no venture funding.",
+      "status": "active",
+      "scale": "Warehouse automation integrator and the longest-standing AutoStore partner; delivers grocery micro-fulfilment centres pairing AutoStore cube storage with its SynQ software and pick stations. Deployments include H-E-B's MFCs in Texas (partnership announced Sept 2020; H-E-B's largest e-commerce fulfilment centre in Katy opened 2023) and Asda's AutoStore site in Derby, UK (collaboration since 2013, 164 robots / 70,000 bins).",
+      "develops": [
+        "SynQ warehouse management / execution software",
+        "Pick stations, CarryPick AMRs, ItemPiQ robotic picking",
+        "Multi-temperature AutoStore integration for e-grocery"
+      ],
+      "uses": [
+        "AutoStore cube storage robots and grid"
+      ],
+      "partners": [
+        "AutoStore",
+        "H-E-B",
+        "Asda",
+        "HelloFresh",
+        "KUKA"
+      ]
+    },
+    dematic: {
+      "name": "Dematic (KION Group)",
+      "hq": "Atlanta, Georgia, USA",
+      "country": "USA",
+      "founded": 1819,
+      "role": "developer",
+      "categories": [
+        "mfc"
+      ],
+      "fundingUSDm": 0,
+      "corporate": true,
+      "fundingNote": "Member of KION Group (Frankfurt-listed) since November 2016; funded internally.",
+      "status": "active",
+      "scale": "Launched a shuttle-based Micro-Fulfillment Solution in October 2019 storing 8,000-15,000 chilled and ambient SKUs inside 10,000-12,000 sq ft of existing store space, piloted at a back-of-store demo site in Salt Lake City and first installed for Meijer in the Grand Rapids, Michigan area (operational Q1 2020); also delivers AutoStore-based fulfilment (e.g. Aster Pharmacy) and automation for Tesco.",
+      "develops": [
+        "Dematic Multishuttle goods-to-person micro-fulfilment",
+        "Dematic iQ software",
+        "Dematic Micro-Fulfillment Solution for grocery, general merchandise and apparel"
+      ],
+      "uses": [
+        "AutoStore cube storage (as integrator)"
+      ],
+      "partners": [
+        "Meijer",
+        "Tesco",
+        "Aster Pharmacy",
+        "KION Group"
+      ]
+    },
+    knapp: {
+      "name": "KNAPP",
+      "hq": "Hart bei Graz, Austria",
+      "country": "AUT",
+      "founded": 1952,
+      "role": "developer",
+      "categories": [
+        "mfc"
+      ],
+      "fundingUSDm": 0,
+      "corporate": true,
+      "fundingNote": "Privately held family-owned Austrian group; no venture funding.",
+      "status": "active",
+      "scale": "Supplied the OSR Shuttle-based hardware inside every Takeoff Technologies grocery MFC (partnership since 2017; $150M / 50-site rollout announced 2019) and now sells its own E-Grocer solution: Woolworths' first fully automated Central Fulfilment Centre in Western Sydney (announced June 2025, up to 60,000 orders/week, two Pick-it-Easy Robots, Evo Shuttle across all temperature zones incl. frozen, automatic bagging); Shufersal CFCs in Kadima and Modi'in, Israel; Kroger distribution-centre shuttle systems.",
+      "develops": [
+        "OSR Shuttle Evo storage and retrieval system",
+        "Pick-it-Easy Robot (AI single-item picking for food)",
+        "E-Grocer MFC / CFC solution and KiSoft software"
+      ],
+      "uses": [],
+      "partners": [
+        "Takeoff Technologies",
+        "Woolworths Group",
+        "Shufersal",
+        "Kroger"
+      ]
+    },
+    addverb: {
+      "name": "Addverb Technologies",
+      "hq": "Noida (Delhi NCR), India",
+      "country": "IND",
+      "founded": 2016,
+      "role": "developer",
+      "categories": [
+        "mfc"
+      ],
+      "fundingUSDm": 132,
+      "corporate": false,
+      "fundingNote": "Reliance Retail acquired a 54% stake for $132M (INR 983 crore) in January 2022, valuing Addverb at roughly $244-270M; Reliance funds a large robot factory ('Bot-Valley') in Noida. Tracxn lists ~$67M raised across earlier rounds.",
+      "status": "active",
+      "scale": "Indian warehouse-robotics maker majority-owned by Reliance Retail; automates dozens of Reliance warehouses including online grocer JioMart, fashion e-tailer Ajio and pharmacy Netmeds, plus Flipkart. Delivered a goods-to-person automated grocery warehouse for Reliance (Quadron carton shuttles, GTP stations, Concinity WES) serving Smart / Smart Point stores, and Landmark Group's e-commerce fulfilment centre in Kuwait (Quazzy system, 1,000 sorts/hour, Feb 2024).",
+      "develops": [
+        "Dynamo AMRs, Zippy sorting robots, Veloce / Quadron carton shuttles",
+        "Concinity warehouse execution software",
+        "Pick-to-light and mobile racking"
+      ],
+      "uses": [],
+      "partners": [
+        "Reliance Retail / JioMart",
+        "Ajio",
+        "Netmeds",
+        "Flipkart",
+        "Landmark Group"
+      ]
+    },
+    greyorange: {
+      "name": "GreyOrange",
+      "hq": "Atlanta, Georgia, USA (founded Gurugram, India)",
+      "country": "USA",
+      "founded": 2011,
+      "role": "developer",
+      "categories": [
+        "mfc"
+      ],
+      "fundingUSDm": 540,
+      "corporate": false,
+      "fundingNote": "About $539.5M raised over 7 rounds per Crunchbase, including $140M Series C (2018, Mithril), $110M growth financing and a $135M Series D in December 2023 (Anthelion Capital).",
+      "status": "active",
+      "scale": "GreyMatter fulfilment orchestration platform and Ranger series robots (GTP goods-to-person, TTP tote-to-person, Assist, MoveSmart sortation) used by Walmart, H&M, COS, Coupang, GXO, Dafiti and Flipkart; Walmart Canada's $118M, 430,000 sq ft Rocky View County (Calgary) fulfilment centre opened in 2022 with GreyOrange robots; ~100 Butler robots at a Flipkart hub outside Bengaluru in 2019.",
+      "develops": [
+        "Ranger GTP / TTP / Assist / MoveSmart mobile robots",
+        "GreyMatter fulfilment operating system",
+        "Butler goods-to-person robots (earlier generation)"
+      ],
+      "uses": [],
+      "partners": [
+        "Walmart Canada",
+        "Flipkart / Myntra",
+        "H&M / COS",
+        "Coupang",
+        "GXO Logistics",
+        "Dafiti"
+      ]
+    },
+    geekplus: {
+      "name": "Geek+ (Geekplus)",
+      "hq": "Beijing, China",
+      "country": "CHN",
+      "founded": 2015,
+      "role": "developer",
+      "categories": [
+        "mfc"
+      ],
+      "fundingUSDm": 532,
+      "corporate": false,
+      "fundingNote": "About $532M raised pre-IPO over 9 rounds including a $100M Series E1 (Aug 2022, Intel Capital, Vertex Growth) at a $2bn+ valuation; listed on the HKEX main board on 9 July 2025 raising HK$2.71bn (~$2.8bn valuation), the first listed AMR warehouse-robotics company.",
+      "status": "active",
+      "scale": "World's largest warehouse-fulfilment AMR provider (CIC, six consecutive years) with 800+ enterprise clients in 40+ countries and 20,000+ robots; retail/e-commerce deployments include Nike's same-day-delivery warehouse in Chiba (Greater Tokyo, 200 picking robots, July 2019) and Decathlon's e-commerce DCs in Castelnau (France), Łódź (Poland) and Campania (Italy) with hundreds of P-series and RoboShuttle robots (2021-22).",
+      "develops": [
+        "P-series shelf-to-person picking robots",
+        "RoboShuttle tote-to-person ACR",
+        "PopPick goods-to-person station",
+        "Sorting and moving robots, RoboArm"
+      ],
+      "uses": [],
+      "partners": [
+        "Decathlon",
+        "Nike (Japan)",
+        "FM Logistic",
+        "Med24",
+        "Verte"
+      ]
+    },
+    hairobotics: {
+      "name": "Hai Robotics",
+      "hq": "Shenzhen, China",
+      "country": "CHN",
+      "founded": 2016,
+      "role": "developer",
+      "categories": [
+        "mfc"
+      ],
+      "fundingUSDm": 215,
+      "corporate": false,
+      "fundingNote": "Roughly $215M over 6 rounds per Tracxn; two back-to-back rounds in September 2021 totalled about $200M and made the company a unicorn.",
+      "status": "active",
+      "scale": "Inventor of the autonomous case-handling robot (ACR, HaiPick) that climbs racks to fetch totes up to 5-10 m; 200+ projects and thousands of robots in e-commerce, apparel, 3PL and pharma. 2025 saw the first European HaiPick Climb site at a Fortune 500 e-commerce hub in Poland (65 robots, 100,000+ locations); LPP Logistics' fashion e-commerce FC near Bucharest runs HaiPick System 3 (2026, 80,000 orders/day) and a 1,500-robot HaiPick Climb fashion e-commerce centre in Europe was announced in September 2026.",
+      "develops": [
+        "HaiPick ACR robots (A42, A42D double-deep, A42-FW flex-width)",
+        "HaiPick Climb / HaiClimber rack-climbing system",
+        "HaiPick System 3 and HaiQ software"
+      ],
+      "uses": [],
+      "partners": [
+        "LPP Logistics",
+        "Bosideng",
+        "Savoye",
+        "unnamed Fortune 500 e-commerce company (Poland)",
+        "unnamed European fashion retailer (1,500-robot site)"
+      ]
+    },
+    instock: {
+      "name": "Instock",
+      "hq": "San Carlos, California, USA",
+      "country": "USA",
+      "role": "developer",
+      "categories": [
+        "mfc"
+      ],
+      "fundingUSDm": 6.2,
+      "corporate": false,
+      "fundingNote": "Seed financing totalling $6.2M: round co-led by OneWay Ventures and Lux Capital, plus a $3.2M extension led by Amazon Industrial Innovation Fund (Dec 2023). Founding year undisclosed in sources.",
+      "status": "pilot",
+      "scale": "Robotics-as-a-service ASRS for micro-fulfilment in which the only moving parts are AMRs that grip bin wings, drive up curved ramps and run upside-down under rack ceilings using magnets; first production system launched January 2024 with Canadian 3PL GoBolt (RBR50 2024 honoree).",
+      "develops": [
+        "Instock ASRS modular racks and gravity-defying AMRs",
+        "Fulfilment-as-a-Service software and workstations"
+      ],
+      "uses": [],
+      "partners": [
+        "GoBolt",
+        "Amazon Industrial Innovation Fund"
+      ]
+    },
+    nomagic: {
+      "name": "Nomagic",
+      "hq": "Warsaw, Poland",
+      "country": "POL",
+      "founded": 2017,
+      "role": "developer",
+      "categories": [
+        "mfc"
+      ],
+      "fundingUSDm": 84,
+      "corporate": false,
+      "fundingNote": "Total funding exceeds $84M: $8.6M seed (Khosla Ventures, 2020), $22M Series A (2022), $44M round (2025) plus an €8M EIB loan (2024).",
+      "status": "active",
+      "scale": "AI piece-picking and packing robot arms for e-commerce fulfilment; first robot went live on a Cdiscount packing line in Cestas near Bordeaux in October 2018, and Zalando is installing up to 50 Nomagic robots across European FCs (Lahr, Mönchengladbach, Verona live; Rotterdam, Stockholm, Paris, Giessen to follow). Contracted ARR grew 220% in 2024; 'Robot Warehouse System of the Year 2026' for its Shoebox Picker.",
+      "develops": [
+        "AI pick-and-place robot cells (Nomagic Pick, justPack packing)",
+        "Shoebox Picker",
+        "Fleet learning / physical-AI software"
+      ],
+      "uses": [
+        "Zivid 3D vision cameras",
+        "Off-the-shelf industrial robot arms"
+      ],
+      "partners": [
+        "Zalando",
+        "Cdiscount",
+        "Arvato",
+        "BRACK.CH"
+      ]
+    },
   },
 
   /* ---------------------------------------------------------------- */
@@ -845,6 +1193,70 @@ window.MARKET = {
       "regulation": "Austria's shop opening-hours law restricts staffed retail trading hours, which has made unmanned 24/7 self-service formats attractive; no robot-specific retail rules were identified.",
       "summary": "Vienna hosts Xpand's first European fully robotic unmanned convenience store (Sept 2025, with CAMPO Group), positioned as the blueprint for its European roll-out."
     },
+    {
+      "id": "NOR",
+      "iso": "578",
+      "name": "Norway",
+      "region": "Europe",
+      "regulation": "Warehouse automation is governed by general EU/EEA machinery-safety rules (Machinery Directive / CE marking); no robot-specific licensing.",
+      "summary": "Home of AutoStore, the Oslo-listed inventor of cube-storage robots used in grocery micro-fulfilment worldwide."
+    },
+    {
+      "id": "NLD",
+      "iso": "528",
+      "name": "Netherlands",
+      "region": "Europe",
+      "regulation": "EU machinery-safety rules apply; the Netherlands is a major logistics hub with permissive zoning for automated distribution centres.",
+      "summary": "Decathlon's first Exotec Skypod system went live in Tilburg in 2021; Hai Robotics' European arm is based in Hoofddorp."
+    },
+    {
+      "id": "POL",
+      "iso": "616",
+      "name": "Poland",
+      "region": "Europe",
+      "regulation": "EU machinery and occupational-safety law; no fulfilment-robot-specific regulation.",
+      "summary": "Warsaw-based Nomagic builds AI piece-picking robots; Geek+ (Decathlon Łódź) and Hai Robotics (first European HaiPick Climb site) run e-commerce deployments in Poland."
+    },
+    {
+      "id": "SVK",
+      "iso": "703",
+      "name": "Slovakia",
+      "region": "Europe",
+      "regulation": "EU machinery-safety and CE-marking rules apply to warehouse robots.",
+      "summary": "Bratislava is the engineering base of Brightpick (Photoneo spin-out) whose Autopickers serve e-grocers and pharmacies."
+    },
+    {
+      "id": "CZE",
+      "iso": "203",
+      "name": "Czech Republic",
+      "region": "Europe",
+      "regulation": "EU machinery-safety framework; no dedicated fulfilment-robotics licensing.",
+      "summary": "Prague hosts Rohlik Group's e-grocery FC and Dr. Max's pharmacy warehouse, both automated with Brightpick Autopicker robots."
+    },
+    {
+      "id": "LUX",
+      "iso": "442",
+      "name": "Luxembourg",
+      "region": "Europe",
+      "regulation": "EU machinery-safety rules apply; warehouse robotics is lightly regulated.",
+      "summary": "Auchan Retail Luxembourg runs 37 Exotec Skypod robots at its Dudelange warehouse (2024)."
+    },
+    {
+      "id": "ROU",
+      "iso": "642",
+      "name": "Romania",
+      "region": "Europe",
+      "regulation": "EU machinery-safety framework applies; no robot-specific rules for warehouses.",
+      "summary": "LPP Logistics' fashion e-commerce fulfilment centre near Bucharest uses Hai Robotics' HaiPick System 3 (2026)."
+    },
+    {
+      "id": "KWT",
+      "iso": "414",
+      "name": "Kuwait",
+      "region": "Middle East",
+      "regulation": "No specific regulation of warehouse robotics; general industrial-safety and import rules apply.",
+      "summary": "Landmark Group's regional e-commerce fulfilment centre in Kuwait is automated with Addverb carton shuttles and sorting robots (2024)."
+    },
   ],
 
   /* ---------------------------------------------------------------- */
@@ -853,6 +1265,8 @@ window.MARKET = {
     /* ---------- USA ---------- */
     { id: "sfbay", name: "San Francisco Bay Area", country: "USA", lat: 37.55, lon: -122.20,
       deployments: [
+        {"player":"takeoff","tech":"mfc","since":2019,"status":"ended","partner":"Albertsons / Safeway","note":"MFC opened October 2019 behind a Safeway in South San Francisco; Albertsons expanded the deal in Dec 2019."},
+        {"player":"instock","tech":"mfc","since":2023,"status":"pilot","partner":"Amazon Industrial Innovation Fund","note":"HQ in San Carlos; seed-funded ASRS-as-a-service developer (founding year undisclosed; 2023 = seed round year)."},
         {"player":"tortoise","tech":"mfc","since":2022,"status":"ended","partner":"Bake Sum","note":"HQ Mountain View; remote-piloted mobile smart stores sold treats in Dolores Park, Golden Gate Park and the Embarcadero (Mar 2022)."},
         {"player":"swyft","tech":"mfc","since":2013,"status":"active","partner":"SFO, SJC, OAK airports","note":"HQ; robotic automated retail stores in San Francisco, San Jose and Oakland airports."},
         { player: "serve", tech: "sidewalk", since: 2021, status: "active", note: "Headquarters (Redwood City) and robot engineering." },
@@ -899,6 +1313,7 @@ window.MARKET = {
       ] },
     { id: "houston", name: "Houston", country: "USA", lat: 29.76, lon: -95.37,
       deployments: [
+        {"player":"swisslog","tech":"mfc","since":2023,"status":"active","partner":"H-E-B","note":"H-E-B's largest e-commerce fulfilment centre, in Katy (Houston area), opened 2023 with Swisslog AutoStore automation."},
         { player: "nuro", tech: "road", since: 2019, status: "ended", until: 2023, partner: "Kroger, Walmart, Domino's, FedEx", note: "Multi-retailer autonomous delivery pilots; wound down when Nuro pivoted to licensing." },
         { player: "wing", tech: "drone", since: 2025, status: "active", partner: "Walmart", note: "Part of 2025 five-metro expansion." },
       ] },
@@ -917,6 +1332,7 @@ window.MARKET = {
       ] },
     { id: "collegestation", name: "College Station & San Antonio", country: "USA", lat: 30.2, lon: -97.1,
       deployments: [
+        {"player":"swisslog","tech":"mfc","since":2020,"status":"active","partner":"H-E-B","note":"Partnership announced Sept 2020 to deploy multiple AutoStore-based MFCs (SynQ software, pick stations) for H-E-B curbside and delivery; sites undisclosed."},
         { player: "amazon", tech: "drone", since: 2022, status: "active", note: "First Prime Air site (College Station 2022); San Antonio added 2025." },
       ] },
     { id: "chicago", name: "Chicago", country: "USA", lat: 41.88, lon: -87.63,
@@ -927,6 +1343,8 @@ window.MARKET = {
       ] },
     { id: "atlanta", name: "Atlanta", country: "USA", lat: 33.75, lon: -84.39,
       deployments: [
+        {"player":"dematic","tech":"mfc","since":2016,"status":"active","partner":"KION Group","note":"Global HQ; Dematic became part of KION Group in November 2016."},
+        {"player":"greyorange","tech":"mfc","since":2018,"status":"active","partner":null,"note":"Global/US headquarters of GreyOrange (company founded in Gurugram in 2011)."},
         {"player":"swyft","tech":"mfc","since":2021,"status":"active","partner":"CVS Pharmacy","note":"CVS Pharmacy robotic store at Hartsfield-Jackson Atlanta International Airport."},
         { player: "serve", tech: "sidewalk", since: 2025, status: "active", partner: "Uber Eats, Shake Shack" },
         { player: "wing", tech: "drone", since: 2025, status: "active", partner: "Walmart" },
@@ -961,6 +1379,7 @@ window.MARKET = {
       ] },
     { id: "jerseycity", name: "New York – Jersey City", country: "USA", lat: 40.72, lon: -74.04,
       deployments: [
+        {"player":"autostore","tech":"mfc","since":2021,"status":"active","partner":"H Mart / Bastian Solutions","note":"Automated MFC added to H Mart's Carlstadt, NJ warehouse for online grocery (announced March 2021, operational October 2021)."},
         {"player":"takeoff","tech":"mfc","since":2020,"status":"ended","partner":"Wakefern / Inserra ShopRite","note":"First standalone MFC in Clifton, New Jersey serving 10 ShopRite stores."},
         { player: "avride", tech: "sidewalk", since: 2024, status: "active", partner: "Uber Eats" },
         { player: "ottonomy", tech: "sidewalk", since: 2020, status: "active", note: "Ottonomy HQ (New York)." },
@@ -986,6 +1405,7 @@ window.MARKET = {
       ] },
     { id: "cincinnati", name: "Cincinnati", country: "USA", lat: 39.10, lon: -84.51,
       deployments: [
+        {"player":"brightpick","tech":"mfc","since":2021,"status":"active","partner":"Photoneo","note":"US HQ in Erlanger, Kentucky (Cincinnati area) since the 2021 spin-out."},
         { player: "kroger", tech: "mfc", since: 2018, status: "active", partner: "Ocado", note: "Kroger HQ; Ocado CFC network (Monroe, OH first)." },
         { player: "ottonomy", tech: "instore", since: 2022, status: "active", partner: "CVG Airport", note: "Ottobot retail delivery inside CVG terminal." },
       ] },
@@ -1005,12 +1425,14 @@ window.MARKET = {
     /* ---------- Canada ---------- */
     { id: "toronto", name: "Toronto", country: "CAN", lat: 43.65, lon: -79.38,
       deployments: [
+        {"player":"instock","tech":"mfc","since":2024,"status":"pilot","partner":"GoBolt","note":"First production Instock ASRS launched Jan 2024 with Toronto-headquartered 3PL GoBolt (nine North American FCs); exact facility undisclosed."},
         { player: "gatik", tech: "middle", since: 2020, status: "active", partner: "Loblaw", note: "Fully driverless middle-mile since 2023." },
         { player: "loblaw", tech: "middle", since: 2020, status: "active", partner: "Gatik" },
         { player: "tinymile", tech: "sidewalk", since: 2019, status: "ended", until: 2021, note: "Pink Geoffrey robots banned by Toronto City Council, Dec 2021." },
       ] },
     { id: "calgary", name: "Calgary", country: "CAN", lat: 51.05, lon: -114.07,
       deployments: [
+        {"player":"greyorange","tech":"mfc","since":2022,"status":"active","partner":"Walmart Canada","note":"Walmart Canada's $118M, 430,000 sq ft fulfilment centre in Rocky View County opened Sept 2022 with GreyOrange Ranger robots."},
         { player: "attabotics", tech: "mfc", since: 2016, status: "ended", until: 2025, note: "HQ; ceased operations 2025." },
       ] },
 
@@ -1122,6 +1544,7 @@ window.MARKET = {
     /* ---------- France ---------- */
     { id: "paris", name: "Paris", country: "FRA", lat: 48.86, lon: 2.35,
       deployments: [
+        {"player":"exotec","tech":"mfc","since":2019,"status":"active","partner":"Carrefour","note":"Carrefour's 24,000 m2 Le Plessis-Pâté e-commerce hub (south Île-de-France) fitted with 225 Skypod robots in 2019 for 2-hour grocery delivery; 4x fulfilment."},
         { player: "twinswheel", tech: "sidewalk", since: 2019, status: "active", partner: "Franprix, DPD", note: "Droid deliveries in Paris arrondissements." },
         { player: "carrefour", tech: "instore", since: 2023, status: "pilot", partner: "Simbe", note: "Tally shelf-scanning pilots in Île-de-France hypermarkets." },
         { player: "simbe", tech: "instore", since: 2023, status: "pilot", partner: "Carrefour" },
@@ -1159,6 +1582,7 @@ window.MARKET = {
     /* ---------- Gulf ---------- */
     { id: "dubai", name: "Dubai", country: "ARE", lat: 25.20, lon: 55.27,
       deployments: [
+        {"player":"takeoff","tech":"mfc","since":2021,"status":"active","partner":"Majid Al Futtaim (Carrefour)","note":"First MFC in the Middle East at the Carrefour store in Ibn Battuta Mall (partnership Jan 2020, launched March 2021); up to 200 orders/hour."},
         { player: "talabat", tech: "sidewalk", since: 2022, status: "pilot", partner: "Dubai Silicon Oasis, Sustainable City", note: "Talabot robot pilots." },
         { player: "talabat", tech: "drone", since: 2023, status: "pilot", note: "Drone delivery trials with DCAA." },
         { player: "keeta", tech: "drone", since: 2025, status: "pilot", note: "DCAA approval for Keeta Drone operations." },
@@ -1178,6 +1602,7 @@ window.MARKET = {
     /* ---------- China ---------- */
     { id: "beijing", name: "Beijing", country: "CHN", lat: 39.90, lon: 116.40,
       deployments: [
+        {"player":"geekplus","tech":"mfc","since":2015,"status":"active","partner":null,"note":"HQ; founded Feb 2015; HKEX-listed July 2025."},
         { player: "meituan", tech: "road", since: 2020, status: "active", note: "Shunyi district: 4M+ autonomous grocery/food orders since 2020; Yizhuang permits 2021." },
         { player: "jd", tech: "road", since: 2018, status: "active", note: "HQ; autonomous vehicles in Yizhuang and Haidian." },
         { player: "neolix", tech: "road", since: 2018, status: "active", note: "HQ; first road-use permits (Yizhuang, 2021)." },
@@ -1193,6 +1618,7 @@ window.MARKET = {
       ] },
     { id: "shenzhen", name: "Shenzhen", country: "CHN", lat: 22.54, lon: 114.06,
       deployments: [
+        {"player":"hairobotics","tech":"mfc","since":2016,"status":"active","partner":null,"note":"HQ; HaiPick ACR launched 2015-16; unicorn in 2021."},
         { player: "meituan", tech: "drone", since: 2021, status: "active", note: "World's densest urban drone-delivery network: 30+ routes, 400,000+ orders." },
         { player: "meituan", tech: "road", since: 2021, status: "active" },
         { player: "pudu", tech: "instore", since: 2016, status: "active", note: "HQ." },
@@ -1215,6 +1641,8 @@ window.MARKET = {
     /* ---------- Japan ---------- */
     { id: "tokyo", name: "Tokyo", country: "JPN", lat: 35.68, lon: 139.69,
       deployments: [
+        {"player":"exotec","tech":"mfc","since":2019,"status":"active","partner":"Uniqlo / Fast Retailing","note":"Fast Retailing chose Skypod robots for Uniqlo warehouses in Nov 2019 (alongside Daifuku's Ariake automation); Exotec Tokyo demo centre in Shin-Kiba."},
+        {"player":"geekplus","tech":"mfc","since":2019,"status":"active","partner":"Nike Japan","note":"200 P-series picking robots and 6,000 racks in Nike's 14,000 m2 Chiba warehouse (July 2019) enabling same-day delivery across Greater Tokyo."},
         { player: "mitsubishi", tech: "sidewalk", since: 2024, status: "active", partner: "Uber Eats, Cartken", note: "Nihonbashi: Japan's first commercial Level 4 sidewalk delivery." },
         { player: "cartken", tech: "sidewalk", since: 2024, status: "active", partner: "Mitsubishi Electric, Uber Eats, Rakuten" },
         { player: "uber", tech: "sidewalk", since: 2024, status: "active", partner: "Mitsubishi Electric" },
@@ -1252,11 +1680,14 @@ window.MARKET = {
     /* ---------- India ---------- */
     { id: "gurugram", name: "Gurugram / Delhi NCR", country: "IND", lat: 28.46, lon: 77.03,
       deployments: [
+        {"player":"addverb","tech":"mfc","since":2016,"status":"active","partner":"Reliance Retail","note":"HQ in Noida; Reliance-funded 'Bot-Valley' robot manufacturing plant; robots deployed across JioMart, Ajio and Netmeds warehouses."},
+        {"player":"greyorange","tech":"mfc","since":2011,"status":"active","partner":null,"note":"Founding location and India engineering hub of GreyOrange (Butler robots first sold to Flipkart 2012-13)."},
         { player: "skyeair", tech: "drone", since: 2022, status: "active", partner: "Flipkart, Blue Dart, Zomato" },
         { player: "swiggy", tech: "drone", since: 2022, status: "pilot", partner: "Skye Air, Garuda" },
       ] },
     { id: "bengaluru", name: "Bengaluru", country: "IND", lat: 12.97, lon: 77.59,
       deployments: [
+        {"player":"greyorange","tech":"mfc","since":2019,"status":"active","partner":"Flipkart","note":"About 100 GreyOrange robots deployed at a Flipkart hub on the outskirts of Bengaluru (reported March 2019)."},
         { player: "swiggy", tech: "drone", since: 2022, status: "pilot", partner: "Garuda Aerospace", note: "Swiggy HQ; Instamart grocery drone pilots." },
         { player: "garuda", tech: "drone", since: 2022, status: "pilot", partner: "Swiggy" },
       ] },
@@ -1273,6 +1704,7 @@ window.MARKET = {
       ] },
     { id: "melbourne", name: "Melbourne", country: "AUS", lat: -37.81, lon: 144.96,
       deployments: [
+        {"player":"takeoff","tech":"mfc","since":2020,"status":"active","partner":"Woolworths Group","note":"Carrum Downs eStore: 2,400 m2 Takeoff/Knapp MFC behind a Woolworths supermarket, first orders 9 Oct 2020; Woolworths later bought Takeoff's assets (2024)."},
         { player: "coles", tech: "mfc", since: 2024, status: "active", partner: "Ocado", note: "Ocado-powered customer fulfilment centre." },
       ] },
 
@@ -1307,6 +1739,8 @@ window.MARKET = {
       ] },
     { id: "vienna", name: "Vienna", country: "AUT", lat: 48.21, lon: 16.37,
       deployments: [
+        {"player":"autostore","tech":"mfc","since":2025,"status":"active","partner":"Veloq (Rohlik Group spin-out)","note":"Grocery fulfilment centre unveiled Oct 2025: first AutoStore grid with real-time expedition (route sorting), 20,000+ SKUs incl. fresh, bakery, pharmacy; 30-minute fulfilment."},
+        {"player":"brightpick","tech":"mfc","since":2024,"status":"active","partner":"Rohlik Group (Gurkerl)","note":"Autopicker rollout planned for Rohlik's Vienna FC after Prague and Munich (2023-24 programme)."},
         {"player":"xpand","tech":"mfc","since":2025,"status":"active","partner":"CAMPO Group","note":"First European unmanned 'store-in-a-box' next to Mariahilferstraße, opened Sept 2025; ambient, chilled and frozen assortment, 24/7, zero staff."},
       ] },
     { id: "boston", name: "Boston", country: "USA", lat: 42.36, lon: -71.06,
@@ -1333,6 +1767,97 @@ window.MARKET = {
     { id: "hartford", name: "Hartford (Windsor)", country: "USA", lat: 41.85, lon: -72.64,
       deployments: [
         {"player":"takeoff","tech":"mfc","since":2020,"status":"ended","partner":"Ahold Delhaize / Stop & Shop","note":"Micro-fulfilment centre attached to a Stop & Shop store in Windsor, CT (Jan 2020)."},
+      ] },
+    { id: "nedrevats", name: "Nedre Vats", country: "NOR", lat: 59.48, lon: 5.75,
+      deployments: [
+        {"player":"autostore","tech":"mfc","since":2016,"status":"active","partner":null,"note":"HQ; cube-storage system invented after Jakob Hatteland's warehouse ran out of space; Oslo-listed since Oct 2021. Company founded 1996; year shown marks its entry into retail micro-fulfilment."},
+      ] },
+    { id: "derby", name: "Derby", country: "GBR", lat: 52.92, lon: -1.48,
+      deployments: [
+        {"player":"swisslog","tech":"mfc","since":2013,"status":"active","partner":"Asda","note":"Asda's AutoStore site in Derby delivered by Swisslog (collaboration since 2013): 164 robots, 70,000 bins, picking time halved; Asda expanded warehouse robots in 2026."},
+        {"player":"autostore","tech":"mfc","since":2013,"status":"active","partner":"Asda / Swisslog","note":"AutoStore Red Line robots fitted at Asda's Derby distribution centre for online grocery general merchandise."},
+      ] },
+    { id: "lille", name: "Lille (Croix)", country: "FRA", lat: 50.63, lon: 3.06,
+      deployments: [
+        {"player":"exotec","tech":"mfc","since":2015,"status":"active","partner":"Decathlon","note":"HQ in Croix; Skypod robots built here; Decathlon (also Lille-based) runs a seven-site Skyfleet programme across Europe."},
+      ] },
+    { id: "bordeaux", name: "Bordeaux (Cestas)", country: "FRA", lat: 44.84, lon: -0.58,
+      deployments: [
+        {"player":"exotec","tech":"mfc","since":2016,"status":"active","partner":"Cdiscount","note":"First-ever Skypod installation, in Cdiscount's historic Cestas warehouse (collaboration since 2016); 5x throughput and density."},
+        {"player":"nomagic","tech":"mfc","since":2018,"status":"active","partner":"Cdiscount","note":"Nomagic's first robot went live on a Cdiscount packing line in Cestas on 12 Oct 2018 - first fully automated e-commerce packing line."},
+      ] },
+    { id: "tilburg", name: "Tilburg", country: "NLD", lat: 51.56, lon: 5.09,
+      deployments: [
+        {"player":"exotec","tech":"mfc","since":2021,"status":"active","partner":"Decathlon","note":"Decathlon's first Skypod system (2021), start of the multi-site Skyfleet programme (150-200 robots per site)."},
+      ] },
+    { id: "luxembourg", name: "Luxembourg (Dudelange)", country: "LUX", lat: 49.48, lon: 6.09,
+      deployments: [
+        {"player":"exotec","tech":"mfc","since":2024,"status":"active","partner":"Auchan Retail Luxembourg","note":"37 Skypod robots processing first orders at Auchan's Dudelange warehouse (Oct 2024; partnership signed 2023)."},
+      ] },
+    { id: "bratislava", name: "Bratislava", country: "SVK", lat: 48.15, lon: 17.11,
+      deployments: [
+        {"player":"brightpick","tech":"mfc","since":2021,"status":"active","partner":"Photoneo","note":"Engineering base; Brightpick spun out of 3D-vision maker Photoneo in 2021."},
+      ] },
+    { id: "prague", name: "Prague", country: "CZE", lat: 50.08, lon: 14.44,
+      deployments: [
+        {"player":"brightpick","tech":"mfc","since":2022,"status":"active","partner":"Rohlik Group","note":"Nine-month Autopicker + Dispatcher pilot in Rohlik's Prague e-grocery FC (2022-23), then multi-warehouse rollout."},
+        {"player":"brightpick","tech":"mfc","since":2023,"status":"active","partner":"Dr. Max / Viapharma","note":"Pharmacy logistics: 9 Autopickers from late 2023, grown to 30 picking up to 20,000 items/day; 95% less manual picking."},
+      ] },
+    { id: "munich", name: "Munich", country: "DEU", lat: 48.14, lon: 11.58,
+      deployments: [
+        {"player":"brightpick","tech":"mfc","since":2023,"status":"active","partner":"Rohlik Group (Knuspr)","note":"First Rohlik site outside Prague to get Autopickers (July 2023), followed by Frankfurt and Vienna."},
+      ] },
+    { id: "boulder", name: "Boulder", country: "USA", lat: 40.01, lon: -105.27,
+      deployments: [
+        {"player":"brightpick","tech":"mfc","since":2024,"status":"active","partner":"The Feed","note":"48 Autopickers installed at sports-nutrition e-retailer The Feed's warehouse near Boulder (early 2024), doubled to 103 picking 70,000 items/day."},
+      ] },
+    { id: "buchs", name: "Buchs (Aargau)", country: "CHE", lat: 47.39, lon: 8.08,
+      deployments: [
+        {"player":"swisslog","tech":"mfc","since":2013,"status":"active","partner":"KUKA","note":"HQ of Swisslog, KUKA's logistics-automation arm and AutoStore's longest-standing integrator. Company founded 1900; year shown marks its entry into retail micro-fulfilment."},
+      ] },
+    { id: "saltlakecity", name: "Salt Lake City", country: "USA", lat: 40.76, lon: -111.89,
+      deployments: [
+        {"player":"dematic","tech":"mfc","since":2019,"status":"pilot","partner":null,"note":"Dematic's back-of-store micro-fulfilment demonstration centre (10,000-12,000 sq ft inside store space), shown Oct 2019."},
+      ] },
+    { id: "grandrapids", name: "Grand Rapids", country: "USA", lat: 42.96, lon: -85.67,
+      deployments: [
+        {"player":"dematic","tech":"mfc","since":2020,"status":"active","partner":"Meijer","note":"First commercial Dematic Micro-Fulfillment Solution carved out of a Meijer supercenter in the Grand Rapids area, operational Q1 2020 (exact store undisclosed)."},
+      ] },
+    { id: "graz", name: "Graz (Hart bei Graz)", country: "AUT", lat: 47.07, lon: 15.44,
+      deployments: [
+        {"player":"knapp","tech":"mfc","since":2016,"status":"active","partner":null,"note":"HQ of KNAPP AG; OSR Shuttle Evo and Pick-it-Easy Robot developed here. Company founded 1952; year shown marks its entry into retail micro-fulfilment."},
+      ] },
+    { id: "sydney", name: "Sydney", country: "AUS", lat: -33.87, lon: 151.21,
+      deployments: [
+        {"player":"knapp","tech":"mfc","since":2025,"status":"active","partner":"Woolworths Group","note":"Woolworths' first fully automated Central Fulfilment Centre in Western Sydney (June 2025): KNAPP E-Grocer with Evo Shuttle, two Pick-it-Easy Robots and auto-bagging; up to 60,000 orders/week."},
+      ] },
+    { id: "kadima", name: "Kadima (Sharon region)", country: "ISR", lat: 32.28, lon: 34.91,
+      deployments: [
+        {"player":"knapp","tech":"mfc","since":2022,"status":"active","partner":"Shufersal","note":"KNAPP-built online-grocery CFC for Shufersal in Kadima, running by 2022; a second CFC followed in Modi'in (autumn 2022)."},
+      ] },
+    { id: "kuwait", name: "Kuwait City", country: "KWT", lat: 29.38, lon: 47.99,
+      deployments: [
+        {"player":"addverb","tech":"mfc","since":2024,"status":"active","partner":"Landmark Group","note":"Landmark's e-commerce fulfilment centre automated with Addverb's Quazzy system (Quadron carton shuttles + Zippy robotic sorters, 1,000 sorts/hour), announced Feb 2024."},
+      ] },
+    { id: "lodz", name: "Łódź", country: "POL", lat: 51.76, lon: 19.46,
+      deployments: [
+        {"player":"geekplus","tech":"mfc","since":2021,"status":"active","partner":"Decathlon","note":"One of three Decathlon European e-commerce DCs (with Castelnau, France and Campania, Italy) upgraded with hundreds of P-series picking robots and RoboShuttles; picking efficiency +300% (announced Jan 2022)."},
+      ] },
+    { id: "toulouse", name: "Toulouse (Castelnau-d'Estrétefonds)", country: "FRA", lat: 43.6, lon: 1.44,
+      deployments: [
+        {"player":"geekplus","tech":"mfc","since":2021,"status":"active","partner":"Decathlon","note":"Decathlon e-commerce DC in Castelnau fitted with Geek+ P-series picking robots and RoboShuttle tote-to-person AMRs."},
+      ] },
+    { id: "bucharest", name: "Bucharest", country: "ROU", lat: 44.43, lon: 26.1,
+      deployments: [
+        {"player":"hairobotics","tech":"mfc","since":2026,"status":"active","partner":"LPP Logistics","note":"HaiPick System 3 at LPP's new fashion e-commerce fulfilment centre near Bucharest: 9,400+ totes/hour, designed for 80,000+ orders/day serving SE Europe."},
+      ] },
+    { id: "warsaw", name: "Warsaw", country: "POL", lat: 52.23, lon: 21.01,
+      deployments: [
+        {"player":"nomagic","tech":"mfc","since":2017,"status":"active","partner":null,"note":"HQ; AI piece-picking robots for e-commerce, backed by Khosla Ventures and EIB."},
+      ] },
+    { id: "verona", name: "Verona", country: "ITA", lat: 45.44, lon: 10.99,
+      deployments: [
+        {"player":"nomagic","tech":"mfc","since":2025,"status":"active","partner":"Zalando","note":"Among the first live Zalando sites (with Lahr and Mönchengladbach, Germany) in the up-to-50-robot Nomagic rollout announced Oct 2025."},
       ] },
   ],
 };

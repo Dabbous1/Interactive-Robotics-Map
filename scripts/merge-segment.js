@@ -11,31 +11,35 @@ const dataPath = path.join(root, "js/data.js"), mediaPath = path.join(root, "js/
 
 function load(file) { const w = {}; global.window = w; delete require.cache[require.resolve(file)]; require(file); return w; }
 const js = (v, indent) => JSON.stringify(v, null, 2).split("\n").map((l, i) => (i ? indent : "") + l).join("\n");
+/* String.replace treats "$&", "$'" and "$1" inside a replacement STRING as tokens, which
+   mangles content that contains dollar signs; every replacement below is a function. */
+const insert = (re, text) => { if (!re.test(data)) throw new Error("marker not found: " + re); data = data.replace(re, () => text); };
 
 let data = fs.readFileSync(dataPath, "utf8");
 const media = load(mediaPath).MEDIA;
 const M = load(dataPath).MARKET;
 const yt = /(?:youtube\.com\/(?:watch\?(?:.*&)?v=|shorts\/|embed\/|live\/)|youtu\.be\/)([A-Za-z0-9_-]{11})/;
 const report = { players: [], cities: [], countries: [], deployments: 0, skipped: [] };
+const SEP = "  /* ---------------------------------------------------------------- */";
 
 for (const file of process.argv.slice(2)) {
   const seg = JSON.parse(fs.readFileSync(file, "utf8"));
   const countryIds = new Set(M.countries.map(c => c.id));
-  /* countries */
+  /* countries: appended before the closing of the countries array */
   for (const c of seg.countries || []) {
     if (countryIds.has(c.id)) continue;
     if (!/^\d{3}$/.test(c.iso)) { report.skipped.push(`country ${c.id}: bad iso`); continue; }
     M.countries.push(c); countryIds.add(c.id); report.countries.push(c.id);
-    data = data.replace(/\n  \],\n\n  \/\* -+ \*\/\n  \/\* Each city lists/, `\n    ${js(c, "    ")},\n  ],\n\n  /* ---------------------------------------------------------------- */\n  /* Each city lists`);
+    insert(/\n  \],\n\n  \/\* -+ \*\/\n  \/\* Each city lists/, `\n    ${js(c, "    ")},\n  ],\n\n${SEP}\n  /* Each city lists`);
   }
-  /* players */
+  /* players: appended before the closing of the players object */
   for (const [id, p] of Object.entries(seg.players || {})) {
     if (M.players[id]) { report.skipped.push(`player ${id}: exists`); continue; }
     if (!countryIds.has(p.country)) { report.skipped.push(`player ${id}: unknown country ${p.country}`); continue; }
     if (!(p.categories || []).every(t => M.tech[t])) { report.skipped.push(`player ${id}: bad category`); continue; }
     for (const k of ["develops", "uses", "partners"]) p[k] = p[k] || [];
     M.players[id] = p; report.players.push(id);
-    data = data.replace(/\n  \},\n\n  \/\* -+ \*\/\n  countries: \[/, `\n    ${id}: ${js(p, "    ")},\n  },\n\n  /* ---------------------------------------------------------------- */\n  countries: [`);
+    insert(/\n  \},\n\n  \/\* -+ \*\/\n  countries: \[/, `\n    ${id}: ${js(p, "    ")},\n  },\n\n${SEP}\n  countries: [`);
   }
   /* cities & deployments */
   for (const c of seg.cities || []) {
@@ -52,12 +56,12 @@ for (const file of process.argv.slice(2)) {
       existing.deployments.push(...fresh); report.deployments += fresh.length;
       const re = new RegExp(`(\\{ id: "${c.id}",[\\s\\S]*?deployments: \\[)`);
       if (!re.test(data)) { report.skipped.push(`city ${c.id}: could not locate in data.js`); continue; }
-      data = data.replace(re, `$1\n${fresh.map(d => `        ${JSON.stringify(d)},`).join("\n")}`);
+      data = data.replace(re, (m0, g1) => `${g1}\n${fresh.map(d => `        ${JSON.stringify(d)},`).join("\n")}`);
     } else {
       if (!countryIds.has(c.country) || typeof c.lat !== "number" || typeof c.lon !== "number") { report.skipped.push(`city ${c.id}: bad country or coords`); continue; }
       c.deployments = deps; M.cities.push(c); report.cities.push(c.id); report.deployments += deps.length;
       const block = `    { id: ${JSON.stringify(c.id)}, name: ${JSON.stringify(c.name)}, country: ${JSON.stringify(c.country)}, lat: ${c.lat}, lon: ${c.lon},\n      deployments: [\n${deps.map(d => `        ${JSON.stringify(d)},`).join("\n")}\n      ] },`;
-      data = data.replace(/\n  \],\n\};\s*$/, `\n${block}\n  ],\n};\n`);
+      insert(/\n  \],\n\};\s*$/, `\n${block}\n  ],\n};\n`);
     }
   }
   /* media */

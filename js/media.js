@@ -1596,5 +1596,204 @@ window.MEDIA = {
     "image": null,
     "press": "https://www.grocerydive.com/news/takeoff-technologies-chapter-11-grocery-ecommerce/717640/",
     "deploymentVideos": []
+  },
+  "autostore": {
+    "site": "https://www.autostoresystem.com/",
+    "video": {
+      "url": "https://www.youtube.com/watch?v=Q9NLVjUIOtY",
+      "title": "View AutoStore robots at work - your future warehouse worker",
+      "source": "AutoStore (YouTube)"
+    },
+    "channel": null,
+    "image": null,
+    "press": "https://www.autostoresystem.com/news",
+    "deploymentVideos": [
+      {
+        "url": "https://www.youtube.com/watch?v=idYPZ9oHu24",
+        "title": "Bastian Solutions AutoStore"
+      }
+    ]
+  },
+  "exotec": {
+    "site": "https://www.exotec.com/",
+    "video": {
+      "url": "https://www.youtube.com/watch?v=IRwyOPO6KR4",
+      "title": "Exotec | Our products | The Skypod System",
+      "source": "Exotec (YouTube)"
+    },
+    "channel": null,
+    "image": null,
+    "press": "https://www.exotec.com/news/",
+    "deploymentVideos": [
+      {
+        "url": "https://www.youtube.com/watch?v=DMLVZyMuBCw",
+        "title": "Exotec Next Generation Skypod"
+      }
+    ]
+  },
+  "brightpick": {
+    "site": "https://brightpick.ai/",
+    "video": {
+      "url": "https://www.youtube.com/watch?v=23ncSxvDx-0",
+      "title": "Brightpick Autopicker: How the AI robot works",
+      "source": "Brightpick (YouTube)"
+    },
+    "channel": null,
+    "image": null,
+    "press": "https://brightpick.ai/brightpick-rohlik-group-announcement/",
+    "deploymentVideos": [
+      {
+        "url": "https://www.youtube.com/watch?v=c0kLWlOH1ko",
+        "title": "Demo of AI warehouse robots (fully automated picking) | Brightpick"
+      }
+    ]
+  },
+  "swisslog": {
+    "site": "https://www.swisslog.com/",
+    "video": {
+      "url": "https://www.youtube.com/watch?v=reGvTDHXVpY",
+      "title": "AutoStore by Swisslog: Flexible and reliable automated e-grocery fulfillment",
+      "source": "Swisslog (YouTube)"
+    },
+    "channel": "https://www.youtube.com/c/SwisslogLogisticsAutomation",
+    "image": null,
+    "press": "https://www.swisslog.com/en-us/about-swisslog/newsroom/news-press-releases-blog-posts/2023/09/heb-katy",
+    "deploymentVideos": [
+      {
+        "url": "https://www.youtube.com/watch?v=4gk0Uk8KRZk",
+        "title": "AutoStore by Swisslog: Unlock the potential of E-Grocery order fulfillment"
+      }
+    ]
+  },
+  "dematic": {
+    "site": "https://www.dematic.com/",
+    "video": {
+      "url": "https://www.youtube.com/watch?v=qraa92ghrAU",
+      "title": "Take a look at the Dematic Micro-Fulfilment Solution",
+      "source": "Dematic (YouTube)"
+    },
+    "channel": "https://www.youtube.com/channel/UCFtkEfwyyzEdao6dEbi3E4A",
+    "image": null,
+    "press": "https://theshelbyreport.com/2019/10/08/dematic-micro-fulfillment-meijer/",
+    "deploymentVideos": [
+      {
+        "url": "https://www.youtube.com/watch?v=prZ5R4eFtAE",
+        "title": "Dematic Micro-Fulfillment Center Back-of-Store Demonstration"
+      }
+    ]
+  },
+  "knapp": {
+    "site": "https://www.knapp.com/",
+    "video": {
+      "url": "https://www.youtube.com/watch?v=67ElzDnmHdU",
+      "title": "KNAPP – Pick-it-Easy-Robot for Food Retail",
+      "source": "KNAPP (YouTube)"
+    },
+    "channel": null,
+    "image": null,
+    "press": "https://www.knapp.com/en/newsroom/press/woolworths-and-knapp-set-a-new-benchmark-in-e-grocery-fulfillment/",
+    "deploymentVideos": [
+      {
+        "url": "https://www.youtube.com/watch?v=_yo-ardpnFA",
+        "title": "KNAPP – E-Grocer MFC | Micro Fulfillment Center at Takeoff"
+      }
+    ]
+  },
+  "addverb": {
+    "site": "https://addverb.com/",
+    "video": {
+      "url": "https://www.youtube.com/watch?v=7AUqqRYV-RM",
+      "title": "Fully Automated Fulfilment Centre by Addverb",
+      "source": "Addverb (YouTube)"
+    },
+    "channel": "https://www.youtube.com/channel/UCa8AAFOa0p_RqScN5SDlpTQ",
+    "image": null,
+    "press": "https://addverb.com/press-release/reliance-acquires-54-stake-in-addverb-technologies-for-132-million/",
+    "deploymentVideos": [
+      {
+        "url": "https://www.youtube.com/watch?v=JF5FDrkoeNI",
+        "title": "Warehouse Automation Solution for Landmark Group | Addverb"
+      }
+    ]
+  },
+  "greyorange": {
+    "site": "https://www.greyorange.com/",
+    "video": {
+      "url": "https://www.youtube.com/watch?v=Y37hrJ_g-ho",
+      "title": "The GreyOrange Ranger™ Series of Intelligent Fulfillment Robots",
+      "source": "GreyOrange (YouTube)"
+    },
+    "channel": "https://www.youtube.com/@GoGreyOrange",
+    "image": null,
+    "press": "https://www.greyorange.com/press-release/ai-driven-warehouse-and-retail-automation-leader-greyorange-closes-on-135m-growth-financing/",
+    "deploymentVideos": [
+      {
+        "url": "https://www.youtube.com/watch?v=2X-4lSv2Kps",
+        "title": "GreyOrange Ranger TTP in action - Tote to Person Robotic Warehouse Automation"
+      }
+    ]
+  },
+  "geekplus": {
+    "site": "https://www.geekplus.com/",
+    "video": {
+      "url": "https://www.youtube.com/watch?v=4bYjgt80Dno",
+      "title": "Geek+ Picking Robots Introduction",
+      "source": "Geek+ (YouTube)"
+    },
+    "channel": "https://www.youtube.com/c/GeekPlusLogisticsWarehouseAutomation",
+    "image": null,
+    "press": "https://www.geekplus.com/resources/news/geekplus-lists-on-hkex-main-board-pioneering-the-global-smart-logistics-transformation-with-robotics",
+    "deploymentVideos": [
+      {
+        "url": "https://www.youtube.com/watch?v=sEX5vya1BnI",
+        "title": "Inside Med24's Futuristic Warehouse: Geek+ Robots & STL's Automation Revolution!"
+      }
+    ]
+  },
+  "hairobotics": {
+    "site": "https://www.hairobotics.com/",
+    "video": {
+      "url": "https://www.youtube.com/watch?v=m27kf8C9CH8",
+      "title": "HaiPick System - Hai Robotics",
+      "source": "Hai Robotics (YouTube)"
+    },
+    "channel": "https://www.youtube.com/channel/UCfILXXSeCh_-b1PEEAj07JA",
+    "image": null,
+    "press": "https://www.hairobotics.com/news/hai-robotics-selected-deliver-worlds-largest-deployment-rack-climbing-warehouse-robots",
+    "deploymentVideos": [
+      {
+        "url": "https://www.youtube.com/watch?v=Q8UaCWFojhc",
+        "title": "HaiPick Climb: Simplifying Warehouse Automation with the Revolutionary HaiClimber Robot"
+      }
+    ]
+  },
+  "instock": {
+    "site": "https://instock.com/",
+    "video": {
+      "url": "https://www.youtube.com/watch?v=COb2EEi0WWs",
+      "title": "Instock ASRS solution at #NRF2024",
+      "source": "YouTube"
+    },
+    "channel": null,
+    "image": null,
+    "press": "https://instock.com/en/news/instock-gobolt-partnership/",
+    "deploymentVideos": []
+  },
+  "nomagic": {
+    "site": "https://nomagic.ai/",
+    "video": {
+      "url": "https://www.youtube.com/watch?v=p-75IKllkJY",
+      "title": "Nomagic & Zalando: Scaling AI Robotics Across Europe's Fulfilment Centres",
+      "source": "Nomagic (YouTube)"
+    },
+    "channel": null,
+    "image": null,
+    "press": "https://nomagic.ai/news/zalando-to-install-up-to-50-ai-powered-nomagic-robots/",
+    "deploymentVideos": [
+      {
+        "url": "https://www.youtube.com/watch?v=zY22CnFa8dw",
+        "title": "Nomagic robots across Europe: Arvato in Dortmund, Germany"
+      }
+    ]
   }
 };
