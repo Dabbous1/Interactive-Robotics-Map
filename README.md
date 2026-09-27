@@ -10,13 +10,14 @@ The site is published with GitHub Pages at **https://dabbous1.github.io/Interact
 
 ## Run it locally
 
-Everything is static and self-contained. Open `index.html` directly in a browser, or serve the folder:
+Everything is static and self-contained, so any file server works. Clone the repository, then from its folder run one of:
 
 ```sh
-npx serve .          # or: python3 -m http.server 8000
+npm start                      # Node: serves http://localhost:8000 and opens the browser
+python3 -m http.server 8000    # Python: then open http://localhost:8000
 ```
 
-No build step and no network access are required (the only external request is Google Fonts, which falls back to system fonts).
+Opening `index.html` directly from disk also works. There is no build step, and no network access is required apart from Google Fonts (falls back to system fonts) and the showcase photos and videos, which load from Wikimedia Commons and YouTube.
 
 ## What you can do
 

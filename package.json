@@ -1,0 +1,11 @@
+{
+  "name": "retail-robotics-market-map",
+  "version": "1.0.0",
+  "description": "Interactive world map of the on-demand retail autonomous robotics market",
+  "private": true,
+  "scripts": {
+    "start": "npx --yes http-server . -p 8000 -c-1 -o",
+    "serve": "python3 -m http.server 8000"
+  },
+  "license": "MIT"
+}
