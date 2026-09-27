@@ -30,8 +30,8 @@ window.MARKET = {
       desc: "Driver-out box trucks moving goods between distribution centres, dark stores and retail outlets on fixed, repeatable routes." },
     instore:  { label: "In-store retail robot", short: "In-store", glyph: "●",
       desc: "Autonomous robots inside stores: shelf-scanning and inventory, hazard detection, floor care with inventory sensing, service and delivery within venues." },
-    mfc:      { label: "Micro-fulfilment automation", short: "Fulfilment", glyph: "◎",
-      desc: "Robotic grid, shuttle and picking systems that assemble on-demand online grocery orders in compact urban fulfilment centres." },
+    mfc:      { label: "Robotic store & micro-fulfilment automation", short: "Robotic store / MFC", glyph: "◎",
+      desc: "Unmanned robotic stores, nano- and micro-fulfilment centres and warehouse robots that pick, store and dispense on-demand retail orders without staff." },
   },
 
   roles: {

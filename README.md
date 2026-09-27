@@ -2,7 +2,7 @@
 
 An interactive world map of the **on-demand retail autonomous robotics market**: which companies operate in each city and country, how much has been invested, and exactly which technologies they develop and use.
 
-It covers six technology families: sidewalk delivery robots, road-going autonomous delivery vehicles, delivery drones, middle-mile autonomous trucks, in-store retail robots and micro-fulfilment automation.
+It covers six technology families: sidewalk delivery robots, road-going autonomous delivery vehicles, delivery drones, middle-mile autonomous trucks, in-store retail robots, and unmanned robotic stores with micro-fulfilment automation.
 
 ## Live website
 
