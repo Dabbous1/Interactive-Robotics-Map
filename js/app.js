@@ -764,6 +764,11 @@
   $("modalClose").addEventListener("click", () => { $("modal").hidden = true; });
   $("modal").addEventListener("click", (e) => { if (e.target === $("modal")) $("modal").hidden = true; });
   $("updated").textContent = M.meta.updated;
+  /* Dataset badge: lets anyone confirm which build a page is showing. */
+  const badge = document.createElement("span");
+  badge.className = "eyebrow"; badge.id = "dataVersion";
+  badge.textContent = `Dataset ${M.meta.version} · ${Object.keys(M.players).length} players`;
+  document.querySelector(".brand").appendChild(badge);
 
   const root = document.documentElement;
   function applyTheme(t) { if (t) root.setAttribute("data-theme", t); else root.removeAttribute("data-theme"); try { if (t) localStorage.setItem("rrm-theme", t); else localStorage.removeItem("rrm-theme"); } catch (e) { /* ignore */ } }

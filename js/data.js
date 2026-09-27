@@ -15,6 +15,7 @@
 window.MARKET = {
   meta: {
     updated: "September 2026",
+    version: "2026.09.27-3",
     title: "Retail Autonomous Robotics Market Map",
   },
 
