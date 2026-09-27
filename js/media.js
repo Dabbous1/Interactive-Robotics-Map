@@ -1469,5 +1469,132 @@ window.MEDIA = {
     "press": "https://www.loblaw.ca/en/gatik-and-loblaw-make-history-with-first-fully-driverless-deployment-in-canada/",
     "deploymentVideos": [],
     "proxy": "gatik"
+  },
+  "xpand": {
+    "site": "https://xpand.us/",
+    "video": {
+      "url": "https://www.youtube.com/watch?v=TgLakcusjXg",
+      "title": "Xpand Unmanned Store Demo (full)",
+      "source": "Xpand (YouTube)"
+    },
+    "channel": "https://www.youtube.com/@xpand-today",
+    "image": null,
+    "press": "https://xpand.us/press",
+    "deploymentVideos": [
+      {
+        "city": "telaviv",
+        "url": "https://www.youtube.com/watch?v=bs82ux57zXk",
+        "title": "ISRAELI FIRM DEPLOYS ROBOTS TO SPEED UP ONLINE SHOPPING"
+      },
+      {
+        "city": "telaviv",
+        "url": "https://www.youtube.com/watch?v=ODHvIKnk6_g",
+        "title": "1MRobotics leading the future of retail automation"
+      }
+    ]
+  },
+  "robomart": {
+    "site": "https://www.robomart.ai/",
+    "video": {
+      "url": "https://www.youtube.com/watch?v=PUb3TQ8VSwA",
+      "title": "Robomart RM5",
+      "source": "YouTube"
+    },
+    "channel": "https://www.youtube.com/@robomarts",
+    "image": null,
+    "press": "https://www.globenewswire.com/en/search/organization/Robomart",
+    "deploymentVideos": [
+      {
+        "city": "la",
+        "url": "https://www.youtube.com/watch?v=2u2oNSMAkck",
+        "title": "Robomart is Self Driving Grocery Store that Makes Deliveries to Your Home at CES 2019"
+      }
+    ]
+  },
+  "tortoise": {
+    "site": null,
+    "video": {
+      "url": "https://www.youtube.com/watch?v=GtxW6A8CFGg",
+      "title": "Tortoise Co-Founder Dmitry Shevelenko Announces Mobile Smart Stores",
+      "source": "YouTube"
+    },
+    "channel": null,
+    "image": null,
+    "press": "https://techcrunch.com/2022/03/04/tortoise-pivots-away-from-robotic-delivery-towards-mobile-stores/",
+    "deploymentVideos": [
+      {
+        "city": "minneapolis",
+        "url": "https://www.youtube.com/watch?v=RyR1Oz74Ffc",
+        "title": "Tortoise Is Testing Robotic Mobile Store at MOA"
+      }
+    ]
+  },
+  "venhub": {
+    "site": "https://www.venhub.com/",
+    "video": {
+      "url": "https://www.youtube.com/watch?v=zmHe6wWDZAg",
+      "title": "VenHub's 24/7 smart stores",
+      "source": "YouTube"
+    },
+    "channel": "https://www.youtube.com/channel/UCt2ggVBgtC7iNp5qzUHbu4g",
+    "image": null,
+    "press": "https://www.venhub.com/investors",
+    "deploymentVideos": [
+      {
+        "city": "la",
+        "url": "https://www.youtube.com/watch?v=O4ILWj0gi0A",
+        "title": "VenHub AI-Powered Smart Store is Taking Over LA"
+      }
+    ]
+  },
+  "cleveron": {
+    "site": "https://cleveron.com/",
+    "video": {
+      "url": "https://www.youtube.com/watch?v=AYhpbdMfKGU",
+      "title": "Cleveron 501",
+      "source": "Cleveron (YouTube)"
+    },
+    "channel": "https://www.youtube.com/@cleveron_robotics",
+    "image": null,
+    "press": "https://cleveron.com/news",
+    "deploymentVideos": [
+      {
+        "city": "tallinn",
+        "url": "https://www.youtube.com/watch?v=2L1Ge8sOW-U",
+        "title": "Outdoor Grocery Pick Up - Cleveron 501"
+      }
+    ]
+  },
+  "f5future": {
+    "site": null,
+    "video": {
+      "url": "https://www.youtube.com/watch?v=8Hm5tKgWVmo",
+      "title": "F5. (Future store). In Guangzhou.",
+      "source": "YouTube"
+    },
+    "channel": null,
+    "image": null,
+    "press": "https://kr-asia.com/f5-future-stores-raises-nearly-usd-14-5-million-to-build-fully-automated-convenience-stores-in-china",
+    "deploymentVideos": []
+  },
+  "swyft": {
+    "site": "https://www.swyft.com/",
+    "video": null,
+    "channel": null,
+    "image": null,
+    "press": null,
+    "deploymentVideos": []
+  },
+  "takeoff": {
+    "site": "https://www.takeoff.com/",
+    "video": {
+      "url": "https://www.youtube.com/watch?v=W7A25duG3lM",
+      "title": "Takeoff: The Leaders in Micro Fulfillment",
+      "source": "Takeoff Technologies (YouTube)"
+    },
+    "channel": "https://www.youtube.com/channel/UCmFLTegc8Dz_v6cvzyc9X6g",
+    "image": null,
+    "press": "https://www.grocerydive.com/news/takeoff-technologies-chapter-11-grocery-ecommerce/717640/",
+    "deploymentVideos": []
   }
 };

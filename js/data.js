@@ -520,6 +520,229 @@ window.MARKET = {
       categories: ["middle"], fundingUSDm: 0, corporate: true, fundingNote: "Corporate programme.",
       status: "active", scale: "Gatik driver-out middle-mile trucks in the Greater Toronto Area since 2020 (fully driverless 2023).",
       develops: [], uses: ["Gatik autonomous box trucks"], partners: ["Gatik"] },
+    xpand: {
+      "name": "Xpand (formerly 1MRobotics)",
+      "hq": "Tel Aviv",
+      "country": "ISR",
+      "founded": 2021,
+      "role": "developer",
+      "categories": [
+        "mfc"
+      ],
+      "fundingUSDm": 31,
+      "corporate": false,
+      "fundingNote": "≈$31M raised (Crunchbase lists $32M over 3 rounds): $8.5M seed (2021); $16.5M Series A (Sept 2022, taking total to $25M) led by Ibex Investors with Emerge, Target Global and INT3; $6M (Aug 2025) led by Ibex Investors and Emerge with participation from the leadership team incl. Chairman & CEO Joel Bar-El (ex-Trax co-founder, appointed 2025). Founded by Eyal Yair (CEO) and Roee Tuval (COO); rebranded from 1MRobotics to Xpand in 2025 to mark the shift from R&D to commercial deployment.",
+      "status": "active",
+      "scale": "Robotic nano-fulfilment in ~30 m² containerised 'dark stores' first ran in Tel Aviv (2023 Nespresso Israel pilot delivering capsules within 90 minutes); the modular 'store-in-a-box' unmanned convenience store (ambient, chilled and frozen, ATM-style dispensing, 24/7, zero staff) was unveiled at NRF 2024 and the first European store opened in Vienna in Sept 2025 with CAMPO Group. 2023 press cited planned deployments for an alcohol retailer in Brazil, minimarkets in Germany and a mobile operator in South Africa (unverified). US and European roll-outs are the stated use of the 2025 round.",
+      "develops": [
+        "containerised robotic pick-and-pack nano-fulfilment system",
+        "unmanned store-in-a-box with robotic dispensing",
+        "computer vision and real-time inventory management",
+        "remote operation / loss-prevention software",
+        "multi-temperature (ambient, chilled, frozen) robotic storage"
+      ],
+      "uses": [
+        "standard shipping containers",
+        "Microsoft Azure marketplace listing for B2B hyperlocal nano-fulfilment"
+      ],
+      "partners": [
+        "CAMPO Group (Vienna)",
+        "Nespresso Israel (Tel Aviv pilot)",
+        "Fortune 500 CPG brands and q-commerce players (undisclosed)"
+      ]
+    },
+    robomart: {
+      "name": "Robomart",
+      "hq": "Los Angeles (Santa Monica)",
+      "country": "USA",
+      "founded": 2018,
+      "role": "developer",
+      "categories": [
+        "mfc",
+        "road"
+      ],
+      "fundingUSDm": 3.4,
+      "corporate": false,
+      "fundingNote": "≈$3.4M raised across 3 rounds incl. a $2M seed (Aug 2023) led by W Ventures with Wasabi Ventures, SOSV/HAX and Hustle Fund. Founded by Ali Ahmed (CEO), Emad Rahim and Tigran Shahverdyan; concept debuted at CES 2018.",
+      "status": "pilot",
+      "scale": "Ran 'store-hailing' pilots in West Hollywood from 2020 (Pharmacy Robomart, Ben & Jerry's, Mars, REEF) after a 2019 Stop & Shop pilot announcement in Boston; unveiled the RM5 (Level-4 autonomous electric van, 10 climate-controlled lockers, 500 lb payload, $3 flat delivery fee) in Aug 2025 with Austin, Texas as first market.",
+      "develops": [
+        "RM5 Level-4 autonomous road-going mobile store / delivery vehicle",
+        "store-hailing consumer app",
+        "climate-controlled locker retail platform"
+      ],
+      "uses": [],
+      "partners": [
+        "REEF",
+        "Unilever (Ben & Jerry's)",
+        "Mars",
+        "Stop & Shop (2019 pilot)"
+      ]
+    },
+    tortoise: {
+      "name": "Tortoise",
+      "hq": "Mountain View",
+      "country": "USA",
+      "founded": 2019,
+      "role": "operator",
+      "categories": [
+        "mfc",
+        "sidewalk"
+      ],
+      "fundingUSDm": 8.3,
+      "corporate": false,
+      "fundingNote": "≈$8.3M raised (Tracxn: $7.8–8.3M, latest round Apr 2021, investors incl. Plug and Play Ventures). Founded 2019 by Dmitry Shevelenko and David Graham; started with scooter repositioning, moved to remote-piloted sidewalk delivery (Albertsons pilot 2021) and pivoted in Mar 2022 to 'mobile smart stores'.",
+      "status": "ended",
+      "scale": "Remote-piloted (operators in Mexico City) vending carts with tap-to-pay lids sold treats in San Francisco parks, popcorn and tickets at Mall of America (2022), burritos at San Diego Comic-Con (Sodexo, Jul 2022) and snacks to curbside customers at Walmart store 100 in Bentonville (Aug 2022); up to 30 stores were planned across US cities and London. The company is now listed as inactive; co-founder Shevelenko joined Perplexity in Oct 2023.",
+      "develops": [
+        "remote-piloted mobile smart store cart",
+        "tap-to-pay lid and remote store-clerk software"
+      ],
+      "uses": [
+        "remote tele-operation centre (Mexico City)"
+      ],
+      "partners": [
+        "Walmart",
+        "Nickelodeon / Mall of America",
+        "Sodexo",
+        "Bake Sum",
+        "Albertsons (delivery pilot)"
+      ]
+    },
+    venhub: {
+      "name": "VenHub Global",
+      "hq": "Pasadena (Los Angeles) / Las Vegas",
+      "country": "USA",
+      "founded": 2021,
+      "role": "developer",
+      "categories": [
+        "mfc"
+      ],
+      "fundingUSDm": 18.9,
+      "corporate": false,
+      "fundingNote": "Pre-listing private funding undisclosed; listed on Nasdaq (VHUB) on 30 Jan 2026 via a direct listing after a proposed SPAC deal with Target Global Acquisition I Corp had implied a $715M enterprise value; $18.9M private placement priced Feb 2026. Reports >1,000 pre-orders (>$300M potential contract value). Founder & CEO Shahan Ohanessian.",
+      "status": "active",
+      "scale": "Fully autonomous 24/7 'Smart Stores' in which two robotic arms (Barb and Peter) pick and hand over up to ~400 convenience items ordered by app or kiosk; five stores open in the Los Angeles area (Glendale, North Hollywood, LAX Metro Transit Center, LA Union Station) since early 2025, six operator-run stores agreed across Las Vegas plus a 66-ft Circa Resort deployment (2026), and a Tampa Bay, Florida roll-out announced Jun 2026; second Las Vegas factory opened 2026.",
+      "develops": [
+        "modular robotic Smart Store (~$250k unit)",
+        "AI inventory management and vision verification system",
+        "mobile ordering app and franchise/operator platform"
+      ],
+      "uses": [
+        "Universal Robots collaborative robot arms"
+      ],
+      "partners": [
+        "LA Metro",
+        "Circa Resort & Casino",
+        "independent store operators"
+      ]
+    },
+    cleveron: {
+      "name": "Cleveron",
+      "hq": "Viljandi",
+      "country": "EST",
+      "founded": 2007,
+      "role": "developer",
+      "categories": [
+        "mfc"
+      ],
+      "fundingUSDm": 0,
+      "corporate": false,
+      "fundingNote": "Privately held and self-funded from parcel-robot sales; venture funding undisclosed. Founded 2007 in Viljandi by Arno Kütt, Peep Kuld and Indrek Oolup (origins in a 2006 online furniture retailer); sister company Clevon spun out its autonomous delivery vehicles.",
+      "status": "active",
+      "scale": "Robotic click-and-collect: >1,500 Cleveron 401 'Pickup Towers' dispensed online orders in Walmart US stores (sold via Bell and Howell) before Walmart retired them in 2021; the trailer-sized Cleveron 501 grocery robot (120 totes, chilled and frozen zones) was deployed by Coop Estonia in Tallinn car parks, and by Selver and Prisma in Estonia from 2020; >5,500 machines in ~50 countries, plus a test online grocery store in Viljandi.",
+      "develops": [
+        "Cleveron 401/403 robotic parcel pickup towers",
+        "Cleveron 501 outdoor robotic grocery pickup unit",
+        "click-and-collect software"
+      ],
+      "uses": [],
+      "partners": [
+        "Walmart (2017–2021)",
+        "Bell and Howell (US distribution)",
+        "Coop Estonia",
+        "Selver",
+        "Prisma",
+        "Zara / Inditex"
+      ]
+    },
+    f5future: {
+      "name": "F5 Future Store",
+      "hq": "Guangzhou",
+      "country": "CHN",
+      "founded": 2014,
+      "role": "operator",
+      "categories": [
+        "mfc"
+      ],
+      "fundingUSDm": 19,
+      "corporate": false,
+      "fundingNote": "≈$19M: RMB 30M (~$4.4M) Series A+ led by Sinovation Ventures (Jun 2017) and a Series B of nearly RMB 100M (~$14.5M, 2019) to open 50 stores in Guangdong.",
+      "status": "pilot",
+      "scale": "24-hour unmanned ~35 m² convenience stores in Guangzhou where robotic arms and an automated warehouse retrieve snacks, drinks and hot food ordered at a terminal or by phone; at least 13 stores by 2019 with 50–60 more planned across Guangzhou, Foshan and Shenzhen; current store count undisclosed.",
+      "develops": [
+        "robotic-arm goods and hot-food dispensing machines",
+        "automated in-store warehousing and ordering algorithms"
+      ],
+      "uses": [],
+      "partners": [
+        "Sinovation Ventures (investor)"
+      ]
+    },
+    swyft: {
+      "name": "Swyft",
+      "hq": "San Francisco",
+      "country": "USA",
+      "founded": 2013,
+      "role": "developer",
+      "categories": [
+        "mfc"
+      ],
+      "fundingUSDm": 3.5,
+      "corporate": false,
+      "fundingNote": "Reported $3.5M raised from FEMSA Ventures and Defiance Ventures (Series B-stage per Tracxn; a 2017 trade headline cites a larger figure, unverified). Founded 2013 by Gower Smith, previously founder of Zoom Systems.",
+      "status": "active",
+      "scale": "Robotic automated retail stores (flagship 28 sq ft R1 Swyft Store, refrigerated kiosks) run as connected micro-warehouses in hundreds of high-traffic sites, notably US airports incl. San Francisco, San Jose and Oakland and a CVS Pharmacy robotic store at Hartsfield-Jackson Atlanta.",
+      "develops": [
+        "R1 Swyft Store robotic vending store",
+        "SaaS automated-retail platform"
+      ],
+      "uses": [],
+      "partners": [
+        "CVS Pharmacy",
+        "US airports",
+        "Fortune 500 brands and vending operators"
+      ]
+    },
+    takeoff: {
+      "name": "Takeoff Technologies",
+      "hq": "Waltham (Boston)",
+      "country": "USA",
+      "founded": 2016,
+      "role": "developer",
+      "categories": [
+        "mfc"
+      ],
+      "fundingUSDm": 86,
+      "corporate": false,
+      "fundingNote": "≈$86M equity raised at a ~$500M valuation, plus a late SAFE note; filed Chapter 11 on 30 May 2024 with ~$9.6M customer DIP financing, and assets were sold to Woolworths Group for $2.5M.",
+      "status": "ended",
+      "scale": "Pioneered grocery micro-fulfilment centres (KNAPP shuttle systems) for online orders: two MFCs with Sedano's in Miami (first 2018), Stop & Shop in Windsor, Connecticut (2020), a standalone MFC in Clifton, New Jersey for Wakefern/ShopRite, Albertsons test sites and a Hy-Vee deal for up to 20 sites; ceased as an independent company in 2024.",
+      "develops": [
+        "micro-fulfilment order-assembly software and MFC design"
+      ],
+      "uses": [
+        "KNAPP OSR shuttle automation"
+      ],
+      "partners": [
+        "Sedano's",
+        "Ahold Delhaize / Stop & Shop",
+        "Wakefern / ShopRite",
+        "Albertsons",
+        "Hy-Vee",
+        "Woolworths Group (acquirer)"
+      ]
+    },
   },
 
   /* ---------------------------------------------------------------- */
@@ -614,6 +837,14 @@ window.MARKET = {
     { id: "BRA", iso: "076", name: "Brazil", region: "Latin America",
       regulation: "ANAC granted Latin America's first commercial drone-delivery certification (Speedbird Aero, 2020).",
       summary: "iFood and Speedbird Aero pioneered regulated drone food delivery in Campinas and Aracaju." },
+    {
+      "id": "AUT",
+      "iso": "040",
+      "name": "Austria",
+      "region": "Europe",
+      "regulation": "Austria's shop opening-hours law restricts staffed retail trading hours, which has made unmanned 24/7 self-service formats attractive; no robot-specific retail rules were identified.",
+      "summary": "Vienna hosts Xpand's first European fully robotic unmanned convenience store (Sept 2025, with CAMPO Group), positioned as the blueprint for its European roll-out."
+    },
   ],
 
   /* ---------------------------------------------------------------- */
@@ -622,6 +853,8 @@ window.MARKET = {
     /* ---------- USA ---------- */
     { id: "sfbay", name: "San Francisco Bay Area", country: "USA", lat: 37.55, lon: -122.20,
       deployments: [
+        {"player":"tortoise","tech":"mfc","since":2022,"status":"ended","partner":"Bake Sum","note":"HQ Mountain View; remote-piloted mobile smart stores sold treats in Dolores Park, Golden Gate Park and the Embarcadero (Mar 2022)."},
+        {"player":"swyft","tech":"mfc","since":2013,"status":"active","partner":"SFO, SJC, OAK airports","note":"HQ; robotic automated retail stores in San Francisco, San Jose and Oakland airports."},
         { player: "serve", tech: "sidewalk", since: 2021, status: "active", note: "Headquarters (Redwood City) and robot engineering." },
         { player: "starship", tech: "sidewalk", since: 2016, status: "active", note: "Corporate HQ; early Redwood City pilots (DoorDash & Postmates, 2017)." },
         { player: "nuro", tech: "road", since: 2016, status: "active", partner: "7-Eleven", note: "HQ in Mountain View; first autonomous commercial delivery in California with 7-Eleven (2021); Uber Eats pilot (2022)." },
@@ -638,12 +871,15 @@ window.MARKET = {
       ] },
     { id: "la", name: "Los Angeles", country: "USA", lat: 34.05, lon: -118.24,
       deployments: [
+        {"player":"robomart","tech":"mfc","since":2020,"status":"pilot","partner":"REEF, Ben & Jerry's, Mars","note":"West Hollywood store-hailing pilots incl. Pharmacy Robomart (Dec 2020); HQ Santa Monica."},
+        {"player":"venhub","tech":"mfc","since":2025,"status":"active","partner":"LA Metro","note":"Five 24/7 robotic Smart Stores: Glendale, North Hollywood, LAX Metro Transit Center, LA Union Station; HQ Pasadena."},
         { player: "serve", tech: "sidewalk", since: 2022, status: "active", partner: "Uber Eats, 7-Eleven", note: "First and largest Serve market (West Hollywood, Koreatown, Downtown); 7-Eleven convenience delivery." },
         { player: "coco", tech: "sidewalk", since: 2020, status: "active", partner: "Uber Eats, DoorDash", note: "Coco HQ market: Santa Monica, Venice, Hollywood, Downtown." },
         { player: "kiwibot", tech: "sidewalk", since: 2021, status: "pilot", note: "Campus and city pilots (UCLA)." },
       ] },
     { id: "miami", name: "Miami", country: "USA", lat: 25.76, lon: -80.19,
       deployments: [
+        {"player":"takeoff","tech":"mfc","since":2018,"status":"ended","partner":"Sedano's","note":"Two grocery micro-fulfilment centres with Sedano's, the first Takeoff site (2018)."},
         { player: "serve", tech: "sidewalk", since: 2025, status: "active", partner: "Uber Eats", note: "Launched 2025 across Brickell, Wynwood and Miami Beach." },
         { player: "coco", tech: "sidewalk", since: 2024, status: "active", partner: "Uber Eats, DoorDash" },
         { player: "cartken", tech: "sidewalk", since: 2022, status: "ended", until: 2024, partner: "Uber Eats", note: "First Uber Eats sidewalk-robot market (Dadeland)." },
@@ -676,6 +912,7 @@ window.MARKET = {
       ] },
     { id: "austin", name: "Austin", country: "USA", lat: 30.27, lon: -97.74,
       deployments: [
+        {"player":"robomart","tech":"road","since":2025,"status":"pilot","partner":null,"note":"First market for the RM5 autonomous mobile store; retailer onboarding announced Aug 2025."},
         { player: "avride", tech: "sidewalk", since: 2024, status: "active", partner: "Uber Eats", note: "Avride HQ; downtown sidewalk deliveries." },
       ] },
     { id: "collegestation", name: "College Station & San Antonio", country: "USA", lat: 30.2, lon: -97.1,
@@ -690,6 +927,7 @@ window.MARKET = {
       ] },
     { id: "atlanta", name: "Atlanta", country: "USA", lat: 33.75, lon: -84.39,
       deployments: [
+        {"player":"swyft","tech":"mfc","since":2021,"status":"active","partner":"CVS Pharmacy","note":"CVS Pharmacy robotic store at Hartsfield-Jackson Atlanta International Airport."},
         { player: "serve", tech: "sidewalk", since: 2025, status: "active", partner: "Uber Eats, Shake Shack" },
         { player: "wing", tech: "drone", since: 2025, status: "active", partner: "Walmart" },
       ] },
@@ -715,6 +953,7 @@ window.MARKET = {
       ] },
     { id: "nwark", name: "Northwest Arkansas", country: "USA", lat: 36.37, lon: -94.21,
       deployments: [
+        {"player":"tortoise","tech":"mfc","since":2022,"status":"ended","partner":"Walmart","note":"Walmart store 100 tested Tortoise mobile vending robots selling snacks to curbside-pickup customers (Aug 2022)."},
         { player: "walmart", tech: "drone", since: 2021, status: "active", note: "Walmart HQ; drone hub programme origin." },
         { player: "zipline", tech: "drone", since: 2023, status: "active", partner: "Walmart", note: "Pea Ridge home delivery." },
         { player: "gatik", tech: "middle", since: 2019, status: "active", partner: "Walmart", note: "First fully driverless commercial middle-mile route (2021)." },
@@ -722,6 +961,7 @@ window.MARKET = {
       ] },
     { id: "jerseycity", name: "New York – Jersey City", country: "USA", lat: 40.72, lon: -74.04,
       deployments: [
+        {"player":"takeoff","tech":"mfc","since":2020,"status":"ended","partner":"Wakefern / Inserra ShopRite","note":"First standalone MFC in Clifton, New Jersey serving 10 ShopRite stores."},
         { player: "avride", tech: "sidewalk", since: 2024, status: "active", partner: "Uber Eats" },
         { player: "ottonomy", tech: "sidewalk", since: 2020, status: "active", note: "Ottonomy HQ (New York)." },
         { player: "fabric", tech: "mfc", since: 2019, status: "active", note: "Micro-fulfilment centres for NYC grocery delivery." },
@@ -737,6 +977,7 @@ window.MARKET = {
       ] },
     { id: "sandiego", name: "San Diego", country: "USA", lat: 32.72, lon: -117.16,
       deployments: [
+        {"player":"tortoise","tech":"mfc","since":2022,"status":"ended","partner":"Sodexo","note":"Mobile smart store selling burritos and drinks at San Diego Comic-Con, 21–24 Jul 2022."},
         { player: "braincorp", tech: "instore", since: 2016, status: "active", note: "HQ; first BrainOS retail floor-care robots deployed 2016." },
       ] },
     { id: "stlouis", name: "St. Louis", country: "USA", lat: 38.63, lon: -90.20,
@@ -830,12 +1071,14 @@ window.MARKET = {
     /* ---------- Estonia ---------- */
     { id: "tallinn", name: "Tallinn", country: "EST", lat: 59.44, lon: 24.75,
       deployments: [
+        {"player":"cleveron","tech":"mfc","since":2020,"status":"active","partner":"Coop Estonia, Selver, Prisma","note":"Cleveron 501 robotic grocery pickup units in Tallinn car parks; Selver and Prisma also adopted the robot in 2020."},
         { player: "starship", tech: "sidewalk", since: 2016, status: "active", partner: "Bolt, Wolt", note: "Engineering HQ; commercial robot food delivery since 2021." },
         { player: "bolt", tech: "sidewalk", since: 2021, status: "active", partner: "Starship" },
         { player: "clevon", tech: "road", since: 2022, status: "active", partner: "DHL, Coop Estonia", note: "Clevon 1 robots on public roads." },
       ] },
     { id: "viljandi", name: "Viljandi", country: "EST", lat: 58.36, lon: 25.59,
       deployments: [
+        {"player":"cleveron","tech":"mfc","since":2007,"status":"active","partner":null,"note":"HQ and development centre; Cleveron runs its own online grocery store here to test the 501 grocery robot."},
         { player: "clevon", tech: "road", since: 2021, status: "active", note: "Manufacturing and first road-legal parcel robot routes (2022)." },
       ] },
 
@@ -908,6 +1151,7 @@ window.MARKET = {
     /* ---------- Israel ---------- */
     { id: "telaviv", name: "Tel Aviv", country: "ISR", lat: 32.08, lon: 34.78,
       deployments: [
+        {"player":"xpand","tech":"mfc","since":2023,"status":"active","partner":"Nespresso Israel","note":"HQ; ~30 m² robotic nano-fulfilment container with streetside hatch packing coffee-capsule orders for ~90-minute / 10-minute delivery (pilot reported Feb 2023)."},
         { player: "flytrex", tech: "drone", since: 2017, status: "active", note: "HQ; National Drone Initiative food-delivery trials (first on-demand drone service launched 2017 in Reykjavik)." },
         { player: "fabric", tech: "mfc", since: 2018, status: "active", partner: "Super-Pharm", note: "HQ; first MFCs in Tel Aviv." },
       ] },
@@ -1060,6 +1304,35 @@ window.MARKET = {
       deployments: [
         { player: "ifood", tech: "drone", since: 2020, status: "active", partner: "Speedbird Aero", note: "First ANAC-approved commercial drone food delivery (Campinas)." },
         { player: "speedbird", tech: "drone", since: 2018, status: "active", partner: "iFood" },
+      ] },
+    { id: "vienna", name: "Vienna", country: "AUT", lat: 48.21, lon: 16.37,
+      deployments: [
+        {"player":"xpand","tech":"mfc","since":2025,"status":"active","partner":"CAMPO Group","note":"First European unmanned 'store-in-a-box' next to Mariahilferstraße, opened Sept 2025; ambient, chilled and frozen assortment, 24/7, zero staff."},
+      ] },
+    { id: "boston", name: "Boston", country: "USA", lat: 42.36, lon: -71.06,
+      deployments: [
+        {"player":"robomart","tech":"road","since":2019,"status":"ended","partner":"Stop & Shop","note":"Stop & Shop announced a pilot of Robomart's driverless grocery store in the Boston area (2019)."},
+        {"player":"takeoff","tech":"mfc","since":2016,"status":"ended","partner":null,"note":"HQ in Waltham; company filed Chapter 11 in May 2024."},
+      ] },
+    { id: "minneapolis", name: "Minneapolis (Bloomington)", country: "USA", lat: 44.84, lon: -93.3,
+      deployments: [
+        {"player":"tortoise","tech":"mfc","since":2022,"status":"ended","partner":"Nickelodeon / Mall of America","note":"Mobile smart store pilot selling popcorn, cotton candy and theme-park tickets at Mall of America (2022)."},
+      ] },
+    { id: "lasvegas", name: "Las Vegas", country: "USA", lat: 36.17, lon: -115.14,
+      deployments: [
+        {"player":"venhub","tech":"mfc","since":2026,"status":"active","partner":"Circa Resort & Casino; independent operators","note":"Production hub since Sept 2025 (second factory 2026); six operator-run Smart Stores agreed Mar 2026 plus a 66-ft Circa deployment."},
+      ] },
+    { id: "tampa", name: "Tampa", country: "USA", lat: 27.95, lon: -82.46,
+      deployments: [
+        {"player":"venhub","tech":"mfc","since":2026,"status":"pilot","partner":"local operator","note":"Florida entry announced Jun 2026 with initial roll-out in the Tampa Bay region."},
+      ] },
+    { id: "guangzhou", name: "Guangzhou", country: "CHN", lat: 23.13, lon: 113.26,
+      deployments: [
+        {"player":"f5future","tech":"mfc","since":2014,"status":"pilot","partner":null,"note":"HQ; 24-hour unmanned convenience stores run by robotic arms (≥13 stores by 2019; expansion to Foshan and Shenzhen planned)."},
+      ] },
+    { id: "hartford", name: "Hartford (Windsor)", country: "USA", lat: 41.85, lon: -72.64,
+      deployments: [
+        {"player":"takeoff","tech":"mfc","since":2020,"status":"ended","partner":"Ahold Delhaize / Stop & Shop","note":"Micro-fulfilment centre attached to a Stop & Shop store in Windsor, CT (Jan 2020)."},
       ] },
   ],
 };

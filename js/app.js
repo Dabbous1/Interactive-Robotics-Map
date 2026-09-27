@@ -56,7 +56,7 @@
   function commonsUrl(file, w = 640) { const t = file.replace(/^File:/, "").replace(/ /g, "_"); return `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(t)}?width=${w}`; }
   const mediaFor = (id) => MEDIA[id] || {};
   function cityVideo(id, city) {
-    const dv = (mediaFor(id).deploymentVideos || []).find(v => v.city && city && (city.name.toLowerCase().includes(v.city.toLowerCase()) || v.city.toLowerCase().includes(city.name.split(/[ (–&\/]/)[0].toLowerCase())));
+    const dv = (mediaFor(id).deploymentVideos || []).find(v => v.city && city && (v.city === city.id || city.name.toLowerCase().includes(v.city.toLowerCase()) || v.city.toLowerCase().includes(city.name.split(/[ (–&\/]/)[0].toLowerCase())));
     return dv && ytId(dv.url) ? dv : null;
   }
   function pickMedia(id, city) {
@@ -100,7 +100,8 @@
     if (m.channel) out.push(`<a href="${esc(m.channel)}" target="_blank" rel="noopener">${EXT_SVG}YouTube channel</a>`);
     if (m.press) out.push(`<a href="${esc(m.press)}" target="_blank" rel="noopener">${EXT_SVG}Newsroom &amp; photos</a>`);
     if (m.image && m.image.page) out.push(`<a href="${esc(m.image.page)}" target="_blank" rel="noopener">${EXT_SVG}Photo source</a>`);
-    (m.deploymentVideos || []).filter(v => ytId(v.url)).slice(0, 3).forEach(v => out.push(`<a href="${esc(v.url)}" target="_blank" rel="noopener">${PLAY_SVG}${esc(v.city)}</a>`));
+    const seen = new Set();
+    (m.deploymentVideos || []).filter(v => ytId(v.url)).forEach(v => { const label = (cityById[v.city] || {}).name || v.city; if (seen.has(label) || seen.size >= 3) return; seen.add(label); out.push(`<a href="${esc(v.url)}" target="_blank" rel="noopener" title="${esc(v.title || "")}">${PLAY_SVG}${esc(label)}</a>`); });
     return out.length ? `<div class="media-links">${out.join("")}</div>` : "";
   }
   /* Delegated: play buttons swap the frame for an embedded player. */
