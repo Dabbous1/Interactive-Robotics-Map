@@ -1,0 +1,45 @@
+# Deploys the static site to GitHub Pages on every push to main.
+# The site is plain HTML/CSS/JS with vendored libraries, so there is no build step.
+name: Deploy website to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      - name: Sanity-check the dataset
+        run: |
+          node -e 'global.window={};require("./js/data.js");require("./js/media.js");const M=window.MARKET;const ids=new Set(M.countries.map(c=>c.id));M.cities.forEach(c=>c.deployments.forEach(d=>{if(!M.players[d.player]||!M.tech[d.tech]||!ids.has(c.country))throw new Error("bad reference in "+c.id)}));console.log("dataset ok:",Object.keys(M.players).length,"players,",M.cities.length,"cities")'
+
+      - name: Upload site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4

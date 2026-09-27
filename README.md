@@ -4,7 +4,11 @@ An interactive world map of the **on-demand retail autonomous robotics market**:
 
 It covers six technology families: sidewalk delivery robots, road-going autonomous delivery vehicles, delivery drones, middle-mile autonomous trucks, in-store retail robots and micro-fulfilment automation.
 
-## Run it
+## Live website
+
+The site is published with GitHub Pages at **https://dabbous1.github.io/Interactive-Robotics-Map/** and redeploys automatically from `main` through `.github/workflows/pages.yml`.
+
+## Run it locally
 
 Everything is static and self-contained. Open `index.html` directly in a browser, or serve the folder:
 
@@ -39,6 +43,7 @@ No build step and no network access are required (the only external request is G
 | `js/app.js` | Map rendering (D3 + TopoJSON), filters, timeline, drawer, search and table |
 | `data/world-50m.js` | Natural Earth 1:50m country geometry from `world-atlas`, wrapped as a script |
 | `vendor/` | Pinned D3 7.9.0 and topojson-client 3.1.0 builds (see `vendor/LICENSES.md`) |
+| `.github/workflows/pages.yml` | GitHub Pages deployment on every push to `main` |
 
 ## Editing the data
 
